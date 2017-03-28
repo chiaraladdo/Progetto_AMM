@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<!--Pagina con il profilo utente-->
+<html>
+    <head>
+        
+        <title>Nerdbook: You shall pass</title>
+        
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta name = "author" content = "Zuzi">
+        <meta name = "description" content = "Descrizione di Nerdbook">
+        <meta name = "keywords" content = "profilo utente nerd social network nerdbook facebook">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    </head>
+    
+    <body>
+        
+        <header>
+        
+            <div id = "title">
+                Nerdbook
+            </div>
+          
+            
+            <nav>
+                <ul>
+                    <li><a href="descrizione.html"> Descrizione</a></li>
+                    <li><a href="login.html"> Login</a></li>
+                </ul>            
+            </nav>
+         
+        </header>
+        
+        <div id = "divBody">
+            <div id="formProfilo">
+                
+                <form action="#profilo.html" method="post">
+                    
+                    <div>
+                        <label for="nomeUtente">Nome</label>
+                        <input type="text" name="nomeUtente" id="nomeUtente"/>
+                    </div>
+                    
+                    <div>
+                        <label for="cognomeUtente">Cognome</label>
+                        <input type="text" name="cognomeUtente" id="cognomeUtente"/>
+                    </div>
+                    
+                    <div>
+                        <label for="urlProfilo">URL Immagine del Profilo</label>
+                        <input type="url" name="urlProfilo" id="urlProfilo">    
+                    </div>
+                   
+                    <div>
+                        <label for="presentazione">Frase Presentazione</label>
+                        <textarea rows="4" cols="20" name="presentazione" id="presentazione"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="dataNascita">Data di nascita</label>
+                        <input type="date" name="dataNascita" id="dataNascita"/>
+                    </div>
+                    
+                    <div>
+                        <label for="pswd">Password</label>
+                        <input type="password" name="pswd" id="pswd"/>
+                    </div>
+                    
+                    <div>
+                        <label for="confermaPswd">Conferma Password</label>
+                        <input type="password" name="confermaPswd" id="confermaPswd"/>
+                    </div>
+                    
+                    <button type="submit">Conferma</button> 
+
+                </form>
+  
+            </div>
+        </div>
+        
+    </body>
+</html>

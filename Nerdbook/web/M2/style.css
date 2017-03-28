@@ -1,0 +1,125 @@
+/*
+**Stile generale per tutte le pagine: bacheca, descrizione, login e profilo
+*/
+
+/* 
+    Created on : 27-mar-2017, 12.29.11
+    Author     : Chiara
+*/
+
+/*regole da applicare all'header*/
+header{
+    background-image: linear-gradient(#20B6C3 0%, #A9D8C8 100%);
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+/*Titolo "Nerdbook" in alto a sinistra*/
+div#title{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    font: 27px/40px "Quicksand", Lato, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    display: inline-block;
+    clear:right;
+
+}
+
+/*Barra di navigaizone a destra*/
+nav{
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
+
+/*stile per tutti gli "ul" e "li" figli di "nav"*/
+nav ul, nav li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav li{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav li:last-child{
+    padding-right: 30px;
+}
+
+/*attributi link = link non ancora visitati, visited= link già visitati*/
+nav li a:link, nav li a:visited{
+    text-decoration: none; /*non più sottolineato*/
+    font: 20px/30px "Quicksand", Lato, sans-serif;
+    color: #ffffff;
+}
+
+
+/*Se si passa sopra il link questo diventa bold*/
+nav li a:hover{
+    font-weight: bold;
+}
+
+/*regole da applicare al body*/
+body{  
+    margin: 0px;
+    background-color: #fafafa;    
+    font: 17px/23px "Lato", Arial, sans-serif;
+    color: #4B4B4B;
+}
+
+
+/*tutti i titoli h1*/
+h1{
+    margin-top: 0px;
+    color: #64C9CE;
+    font: 23px/30px "Quicksand", Lato, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+/*tutti i titoli h2*/
+h2{
+    margin-top: 0px;
+    color: #64C9CE;
+    font: 25px/30px "Lato", Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+/*tutti i titoli h2*/
+h3{
+    margin-top: 0px;
+    color: #585B5D;
+    font: 23px/30px "Lato", Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+/*Sommario pagina descrizione*/
+div#Sommario{
+    background-color: #ffffff;
+    border-radius: 48px;
+    border-style: solid;
+    border-color: #64C9CE;
+}
+
+div#Sommario a:link, div#Sommario a:visited{
+    
+    font: "Lato", Arial, sans-serif;
+    font-size: 20px;
+    text-decoration: none; /*non più sottolineato*/
+    color: #585B5D;
+    
+}
+div#Sommario li{
+    list-style-type: none;
+}
+/*Se si passa sopra il link questo diventa bold*/
+div#Sommario a:hover{
+    font-weight: bold;
+}
