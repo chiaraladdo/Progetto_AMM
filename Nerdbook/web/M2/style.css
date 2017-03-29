@@ -13,13 +13,14 @@ header{
     display:inline-block;
     position: fixed;
     width: 100%;
+    top: 0px;
     
 }
 
 /*Titolo "Nerdbook" in alto a sinistra*/
 div#title{
     text-align: left;
-    padding-left: 20px;
+    padding-left: 70px;
     padding-top: 10px;
     font: 27px/40px "Quicksand", Lato, sans-serif;
     font-weight: bold;
@@ -28,37 +29,35 @@ div#title{
     clear:right;
 
 }
-
-/*Barra di navigaizone a destra*/
+/*Navbar a destra*/
 nav{
     text-align: right;
     display: inline-block;
-    float: right;
-    
+    float: right;    
 }
-
-/*stile per tutti gli "ul" e "li" figli di "nav"*/
+/*annullato stile navbar*/
 nav ul, nav li{
     list-style-type: none;
     display: inline-block;
 }
 
+/*spaziatura tra gli elementi della navbar*/
 nav li{
     padding-left: 20px;
     padding-right: 20px;
 }
 
+/*spaziatura per l'ultimo elemento della navbar*/
 nav li:last-child{
-    padding-right: 50px;
+    padding-right: 70px;
 }
 
-/*attributi link = link non ancora visitati, visited= link già visitati*/
+/*stile link della navbar*/
 nav li a:link, nav li a:visited{
-    text-decoration: none; /*non più sottolineato*/
-    font: 20px/30px "Lato", Arial, sans-serif;
+    text-decoration: none;
+    font: 20px/30px "Quicksand", Lato, sans-serif;
     color: #ffffff;
 }
-
 
 /*Se si passa sopra il link questo diventa bold*/
 nav li a:hover{
@@ -73,57 +72,69 @@ body{
     color: #4B4B4B;
 }
 
-
-/*tutti i titoli h1*/
+/*Stile titoli h1*/
 h1{
-    margin-top: 50px;
     color: #95C92C;
     font: 30px/40px "Quicksand", Lato, sans-serif;
     font-weight: bold;
-    text-align: center;
-    
+    text-align: center;  
 }
 
-/*tutti i titoli h2*/
+/*Stile titoli h2*/
 h2{
-    margin-top: 30px;
-    color: #64C9CE;
     color: #FA6138;
-    font: 28px/40px "Quicksand", Arial, sans-serif;
-    font-weight: bold;
-    
+    font: 28px/40px "Quicksand", Lato, sans-serif;
+    font-weight: bold; 
 }
 
-/*tutti i titoli h2*/
+/*Stile titoli h3*/
 h3{
-    margin-top: 0px;
+    margin-top: 30px;
     color: #585B5D;
     font: 24px/30px "Lato", Arial, sans-serif;
-    font-weight: bold;
-    
+    font-weight: bold;    
 }
+
+/*Stile paragrafi*/
 p{
     margin-top: 0px;
-    font: 20px/30px "Lato", arial, sans-serif;
+    font: 20px/30px "Lato", Arial, sans-serif;
     font-weight: lighter;
     color: #4B4B4B;
 }
-/*Sommario pagina descrizione*/
+
+/*Definizione divBody (distanziato da header)*/
+div#divBody{
+    height: 80px;
+    margin-top: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+}
+
+/*Stile Sommario della pagina descrizione*/
 div#Sommario{
     background-color: #ffffff;
     border-radius: 48px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 80px; 
     padding-top: 20px;
-    padding-bottom: 20px;
-
+    padding-bottom: 20px;    
 }
 
-/*Applica stile ai link del sommario*/
+/*I link del Sommario riportano all'altezza giusta'*/
+:target{
+padding-top: 80px;
+margin-top: -80px;
+}
+
+/*Stile link del sommario*/
 div#Sommario a:link, div#Sommario a:visited{
     
     font: 24px/30px "Lato", Arial, sans-serif;
-    text-decoration: none; /*non più sottolineato*/
+    font-weight: lighter;
+    text-decoration: none;
     color: #585B5D;
     
     
@@ -132,17 +143,20 @@ div#Sommario a:link, div#Sommario a:visited{
 /*Toglie i numeri dal sommario*/
 div#Sommario ol li{
     list-style-type: none;
-    text-align: center;
 }
+
 /*Se si passa sopra il link questo diventa bold*/
 div#Sommario a:hover{
     font-weight: bold;
 }
 
+/*Stile generale delle info*/
 div#info{
+    margin-top: 20px;
     text-align: center; 
 }
 
+/*Stile dei box delle info*/
 div#info1, div#info2, div#info3{
     background-color: #ffffff;
     border-radius: 48px;
@@ -154,32 +168,31 @@ div#info1, div#info2, div#info3{
     
 }
 
+/*Primo box allineato a sinistra*/
 div#info1{
     text-align: left;
     padding-left: 180px;
 }
 
-
-
+/*Secondo box allineato a destra*/
 div#info2{
     margin-top: 20px;
     text-align: right;
-    padding-right: 180px;
-    
+    padding-right: 180px;    
 }
 
-div#info2 p{
-    float: top;
-}
+/*Terzo box allineato al centro*/
 div#info3{
     margin-top: 20px;
     text-align: center;
 }
 
+/*Scritta in basso*/
 div#info4{
     margin-top: 70px;
 }
 
+/*Stile scritta in basso*/
 div#info4 p{
     margin-top: 20px;
     color: #64C9CE;
@@ -194,17 +207,18 @@ div#info4 p{
 
 
 
-/*Immagini puramente decorative (Nerd+login)*/
+
+/*Immagini puramente decorative pagina Descrizione(Nerd+login)*/
 div#info1 p::after{
     display:inline-block;
-    text-align: right;
-    white-space: pre;
+    padding-left: 20px;
     content: url("img/Nerds.png");
+    vertical-align: top; 
 }
 div#info2 p::before{
-    display: block;
-    text-align: left;
-    white-space: pre;
-    padding-left: 180px;
+    display: inline-block;
+    padding-right: 300px;
     content: url("img/img.png");
+    vertical-align: top;
+    
 }
