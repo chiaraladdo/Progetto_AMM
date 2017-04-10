@@ -27,17 +27,29 @@
                 <ul>
                     <li><a href="descrizione.html"> Descrizione </a></li>
                     <li><a href="login.html"> Login </a></li>
-                 </ul>            
+                    <li>
+                        <img id="fotoProfiloBarra" alt="fotoProfiloAttivo" src="img/profilePic.png">
+                        <a class="profiloAttivoBarra" href="profilo.html"> Zuzi </a>
+                    </li>                      
+                    <li><a class="profiloAttivoBarra" href="login.html"> Logout </a></li>                   
+                 </ul>
+                
+                
             </nav>
+            
+            
             
         </header>
         
-
         <div id="divBody">
             
-            <h1>Nerdbook - Bacheca</h1>
+            
                         
             <div id = "sidebar">
+                
+                <form>
+                    <input type="search" name="searchBar" id="searchBar" value="Cerca..."/>
+                </form>
                 
                 <div id="Persone">
                     
@@ -70,18 +82,22 @@
                     
                     <ul>
                         <li class = "gruppo">
+                            <img alt="fotoGruppo1" src="img/grifondoro.jpg">
                             <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
                                 Grifondoro</a>
                         </li>
                         <li class = "gruppo">
+                            <img alt="fotoGruppo2" src="img/tassorosso.GIF">
                             <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
                                 Tassorosso</a>
                         </li>
                         <li class = "gruppo">
+                            <img alt="fotoGruppo3" src="img/corvonero.GIF">
                             <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
                                 Corvonero</a>
                         </li>
                         <li class = "gruppo">
+                            <img alt="fotoGruppo4" src="img/serpeverde.jpg">
                             <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
                                 Serpeverde</a>
                         </li>
@@ -91,6 +107,21 @@
                 </div>
                 
             </div>
+            
+            <div id="profiloAttivo">
+               <img class="fotoProfilo" alt="fotoProfiloAttivo" src="img/profilePic.png">
+               <p class="nomeUtente">Zuzi Zuzizuzizuzi</p>
+               <p class="content">"Non è bello ciò che è bello ma è bello ciò che Zuzi"</p>
+            </div>
+            
+            <!--<div id="nuovoPost">
+                <form>
+                    <textarea rows="4" cols="20" name="testoPost" id="testoPost"></textarea>
+                    <input type="url" name="urlAllegato" id="urlAllegato">  
+                    <input type="radio" name="nuovoPost" value="immagine" id="tipoImmagine">
+                    <input type="radio" name="nuovoPost" value="url" id="tipoUrl">                  
+                </form>
+            </div>--!>
             
             <div id="posts">
                 
@@ -119,7 +150,7 @@
                     <p class="nomeUtente">Grattastinchi</p>
                     <div class="content">
                         <p>Miao aMici, sono famoso (PS. Meglio GatTeender di Nerdbook)</p>
-                        <a href="http://it.harrypotter.wikia.com/wiki/Grattastinchi" target="_blank">Miao aMici</a>      
+                        <a href="http://it.harrypotter.wikia.com/wiki/Grattastinchi" target="_blank">www.miaoamici.meow</a>      
                     </div>
                     </div>
             

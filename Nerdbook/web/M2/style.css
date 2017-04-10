@@ -125,7 +125,7 @@ form label:after{
 }
 
 /*Stile input*/
-form input{
+form input, form textArea{
     background-color: #ffffff;
     border-radius: 48px;
     border-style: solid; 
@@ -140,33 +140,16 @@ form input{
     text-indent: 10px;
     font: 14px/20px "Lato", Arial, sans-serif;
     color:#979B9D;
+    
+    resize:none  
+}
+/*Altezza per i testi*/
+form textArea{
+    height:50px;
 }
 
 /*Stile quando si preme sul campo input*/
 form input:focus{
-    outline: none;
-    border-color: #B4DDD0;
-    border-radius: 48px;
-    box-shadow: 0 0 8px #64C9CE;
-}
-
-/*Stile area di testo*/
-form textArea{
-    background-color: #ffffff;
-    border-radius: 48px;
-    border-style: solid; 
-    border-color: #B4DDD0;
-    box-shadow:0px 3px 6px #E3E3E3;
-
-    height: 60px;
-    width: 250px;
-    text-indent: 10px;
-    font: 14px/20px "Lato", Arial, sans-serif;
-    color:#979B9D;
-}
-
-/*Stile quando si preme sull'area di testo*/
-form textArea:focus{
     outline: none;
     border-color: #B4DDD0;
     border-radius: 48px;
@@ -202,6 +185,42 @@ a:link, a:visited{
     text-decoration: none;
     color: #585B5D; 
 }
+
+
+/*Stile side bar (left)*/
+div#sidebar{
+    background: #ffffff;
+    border-radius: 48px;
+    top:80px;
+    width: 20%;
+    height: 500px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    float: left;
+    position: fixed;
+}
+
+/*poszione Titoli sidebar*/
+div#sidebar h2{
+    padding-left: 30px;
+}
+
+/*Barra di ricerca nella sidebar*/
+input#searchBar{
+    margin-top:30px;
+    margin-left: 40px;
+    padding: 15px;
+    text-indent: 5px;
+    width: 70%;
+}
+
+/*Stile immagini persone e gruppi*/
+.persona img, .gruppo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 80px;
+}
+
 /**Fine regole generali**/
 
 
@@ -331,25 +350,26 @@ div#formLogin form div{
 /*Fine Pagina Login*/
 
 /*Inizio Pagina Bacheca*/
-div#sidebar{
-    background: #ffffff;
-    border-radius: 48px;
-    top:80px;
-    width: 20%;
-    height:500px;
-    padding-right: 20px;
-    float: left;
-    position: fixed;
-}
-div#sidebar h2{
-    padding-left: 30px;
+
+/*Stile foto del profilo nella barra*/
+#fotoProfiloBarra{
+    float:left;
+    width:20px;
+    height: 20px;
+    border-radius: 50px;
+    border-color: #ffffff;
+    border-style: double;
+    margin-right: 8px;
 }
 
-.persona img{
-    width: 40px;
-    height: 40px;
-    border-radius: 80px;    
+.profiloAttivoBarra{    
+    display: block;
+    text-align: center;
+    float: right;
+    font-size: 5px;
 }
+
+/*Stile link persone e gruppi*/
 .persona a, .gruppo a{
     padding-left: 5px;
     vertical-align: top;
@@ -360,27 +380,43 @@ div#sidebar h2{
     font-weight: normal;
 }
 
-div#posts{
+/*Stile del profilo attivo con la descrizione*/
+div#profiloAttivo{
     float:left;    
-    width: 70%;
+    width: 72%;
+    margin-right: 30px;
     margin-left: 300px;
 }
 
+/*stile descrizione del profilo attivo*/
+div#profiloAttivo p{
+    display: inline-block;
+}
 
+/*posizione e grandezza dei post*/
+div#posts{
+    float:left;    
+    width: 70%;    
+    margin:auto;
+    padding-left: 325px;
+}
 
-.post{
+/*Stile post e profilo attivo*/
+.post, div#profiloAttivo{
     background: #ffffff;
     border-radius: 48px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
+/*Stile foto profilo per i post*/
 .fotoProfilo{
     width: 50px;
     height: 50px;
     border-radius: 40px;
 }
 
+/*stile e posizione per il nome utente*/
 .nomeUtente{
     display: inline-block;
     vertical-align: top;
@@ -390,25 +426,81 @@ div#posts{
 
 }
 
+/*posizione del vero contenuto del post*/
 .content{
     padding-left: 64px;
     padding-right: 30px;
 }
 
+/*Stile testo del post*/
 .content p{
     text-align: justify;
 }
 
-.content img{
-}
+/*Stile link condivisi in un post*/
 .content a:link, .content a:visited{    
     font-weight: normal;
     color: #64C9CE;
 }
+/*Stile link condivisi in un post quando si va sopra*/
 .content a:hover{    
     font-weight: bold;
 }
 /*Fine Pagina Bacheca*/
+
+/*Inizio Pagina Profilo*/
+
+/*posizione e grandezza del form*/
+div#formProfilo{   
+    float:left;    
+    width: 70%;    
+    margin:auto;
+    margin-left: 325px;
+    background: #ffffff;
+    border-radius: 48px;
+    
+}
+
+div#dimFotoProfilo img{    
+    width: 170px;
+    height: auto;
+    float: left;
+    margin: 30px; 
+    border-radius: 20px;
+     
+}
+
+#formProfilo img{    
+    position: absolute;
+}
+
+.Profilo{
+    text-align: center;
+    padding:20px;
+    display:block;
+    
+}
+.Profilo input{
+    width: 180px;
+}
+.Profilo textarea{
+    border-radius: 20px;
+    border-style: solid;
+    width: 180px;
+    text-indent: 5px;
+    resize: none; 
+}
+.Profilo textarea:focus{
+    border-radius: 20px;
+}
+
+.Profilo div{
+    margin-top: 5px;
+    margin-bottom: 20px;      
+}
+/*Fine Pagina Profilo*/
+
+
 
 /*Immagini puramente decorative pagina Descrizione(Nerd+login)*/
 div#info1 p::after{

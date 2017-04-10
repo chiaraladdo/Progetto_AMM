@@ -33,18 +33,86 @@
         </header>
         
         <div id = "divBody">
+            
+            <div id = "sidebar">
+                
+                <form>
+                    <input type="search" name="searchBar" id="searchBar" value="Cerca..."/>
+                </form>
+                
+                <div id="Persone">
+                    
+                    <h2>Persone</h2>
+                    
+                    <ul>
+                        <li class = "persona">
+                            <img alt="fotoProfilo1" src="img/HarryPotter1.jpg">
+                            <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/profilo.html">
+                                Harry Potter</a>
+                        </li>
+                        <li class = "persona">
+                            <img alt="fotoProfilo2" src="img/LordVoldemort1.jpg">  
+                            <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/profilo.html">
+                                Lord Voldemort</a>
+                        </li>
+                        <li class = "persona">
+                            <img alt="fotoProfilo3" src="img/Grattastinchi1.jpg"> 
+                            <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/profilo.html">
+                                Grattastinchi</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                
+                <div id="Gruppi">
+                    
+                    <h2>Gruppi</h2>
+                    
+                    <ul>
+                        <li class = "gruppo">
+                            <img alt="fotoGruppo1" src="img/grifondoro.jpg">
+                            <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
+                                Grifondoro</a>
+                        </li>
+                        <li class = "gruppo">
+                            <img alt="fotoGruppo2" src="img/tassorosso.GIF">
+                            <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
+                                Tassorosso</a>
+                        </li>
+                        <li class = "gruppo">
+                            <img alt="fotoGruppo3" src="img/corvonero.GIF">
+                            <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
+                                Corvonero</a>
+                        </li>
+                        <li class = "gruppo">
+                            <img alt="fotoGruppo4" src="img/serpeverde.jpg">
+                            <a href = file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html>
+                                Serpeverde</a>
+                        </li>
+                       
+                    </ul>
+                    
+                </div>
+            </div>
+                
             <div id="formProfilo">
                 
-                <form action="#profilo.html" method="post">
+                <div id="dimFotoProfilo">
+                   <img alt="fotoProfiloAttivo" src="img/profilePic.png"> 
+                </div>
+                
+                
+                <form class="Profilo" action="#profilo.html" method="post">
                     
                     <div>
                         <label for="nomeUtente">Nome</label>
-                        <input type="text" name="nomeUtente" id="nomeUtente"/>
+                        <input type="text" name="nomeUtente" id="nomeUtente" value="Zuzi"/>
                     </div>
                     
                     <div>
                         <label for="cognomeUtente">Cognome</label>
-                        <input type="text" name="cognomeUtente" id="cognomeUtente"/>
+                        <input type="text" name="cognomeUtente" id="cognomeUtente" value="Zuzizuzizuzi"/>
                     </div>
                     
                     <div>
@@ -64,15 +132,15 @@
                     
                     <div>
                         <label for="pswd">Password</label>
-                        <input type="password" name="pswd" id="pswd"/>
+                        <input type="password" name="pswd" id="pswd" value="Password"/>
                     </div>
                     
                     <div>
                         <label for="confermaPswd">Conferma Password</label>
-                        <input type="password" name="confermaPswd" id="confermaPswd"/>
+                        <input type="password" name="confermaPswd" id="confermaPswd" value="Password"/>
                     </div>
                     
-                    <button type="submit">Conferma</button> 
+                    <button type="submit">Aggiorna</button> 
 
                 </form>
   
