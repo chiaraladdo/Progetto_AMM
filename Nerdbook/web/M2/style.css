@@ -15,6 +15,7 @@ header{
     display:inline-block;
     position: fixed;
     width: 100%;
+    height: 64px;
     top: 0px;   
 }
 
@@ -106,7 +107,7 @@ p{
 /*Definizione divBody (distanziato da header)*/
 div#divBody{
     height: 80px;
-    margin-top: 80px;
+    margin-top: 90px;
     margin-left: 30px;
     margin-right: 30px;    
 }
@@ -149,7 +150,7 @@ form textArea{
 }
 
 /*Stile quando si preme sul campo input*/
-form input:focus{
+form input:focus, form textArea:focus{
     outline: none;
     border-color: #B4DDD0;
     border-radius: 48px;
@@ -191,7 +192,7 @@ a:link, a:visited{
 div#sidebar{
     background: #ffffff;
     border-radius: 48px;
-    top:80px;
+    top:90px;
     width: 20%;
     height: 500px;
     padding-right: 20px;
@@ -232,7 +233,7 @@ div#Sommario{
     border-radius: 48px;
     margin-left: 40px;
     margin-right: 40px;
-    margin-top: 80px; 
+    margin-top: 90px; 
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;    
@@ -350,12 +351,24 @@ div#formLogin form div{
 /*Fine Pagina Login*/
 
 /*Inizio Pagina Bacheca*/
+#utenteBarra{
+    display: inline-block;
+    float: right;
+    width: 150px;
+    height: 20px;
+}
+
+#utenteBarra a{
+    width: 100px;
+    font: 17px/20px "Quicksand", Lato, sans-serif;
+    text-align: left;
+}
 
 /*Stile foto del profilo nella barra*/
 #fotoProfiloBarra{
     float:left;
-    width:20px;
-    height: 20px;
+    width:30px;
+    height: 30px;
     border-radius: 50px;
     border-color: #ffffff;
     border-style: double;
@@ -383,14 +396,15 @@ div#formLogin form div{
 /*Stile del profilo attivo con la descrizione*/
 div#profiloAttivo{
     float:left;    
-    width: 72%;
+    width: 70%;
     margin-right: 30px;
     margin-left: 300px;
 }
 
 /*stile descrizione del profilo attivo*/
 div#profiloAttivo p{
-    display: inline-block;
+    display: inline;
+    vertical-align: top;
 }
 
 /*posizione e grandezza dei post*/
@@ -461,8 +475,13 @@ div#formProfilo{
     
 }
 
-div#dimFotoProfilo img{    
-    width: 170px;
+div#formProfilo{    
+    overflow: hidden; 
+}
+
+div#dimFotoProfilo img{
+    position: absolute;
+    width: 270px;
     height: auto;
     float: left;
     margin: 30px; 
@@ -470,33 +489,53 @@ div#dimFotoProfilo img{
      
 }
 
-#formProfilo img{    
-    position: absolute;
+.Profilo{
+    text-align: left;
+    padding:20px;  
 }
 
-.Profilo{
-    text-align: center;
-    padding:20px;
-    display:block;
-    
-}
 .Profilo input{
+    text-align: left;
     width: 180px;
+    margin-bottom: 15px;
+    margin-top: 5px;
 }
+
+.Profilo button{
+    width:410px;
+    float:right;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
 .Profilo textarea{
     border-radius: 20px;
     border-style: solid;
     width: 180px;
     text-indent: 5px;
-    resize: none; 
+    resize: none;
 }
 .Profilo textarea:focus{
     border-radius: 20px;
 }
 
 .Profilo div{
-    margin-top: 5px;
-    margin-bottom: 20px;      
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+}
+
+.Profilo label{
+     display: inline-block;
+     margin-right: 10px;
+     margin-left: 400px;
+     margin-bottom: 20px;
+}
+
+.Profilo div input, .Profilo div textArea{
+    display: inline-block;
+    float:right;
 }
 /*Fine Pagina Profilo*/
 
@@ -515,4 +554,12 @@ div#info2 p::before{
     padding-right: 300px;
     content: url("img/img.png");
     vertical-align: top;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v6/s2PXW4WrV3VLrOUpHiqsffFC_w5J6O5PEm5icuu-cHc.woff) format('woff');
 }
