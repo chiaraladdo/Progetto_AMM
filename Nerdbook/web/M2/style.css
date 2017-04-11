@@ -7,10 +7,18 @@
     Author     : Chiara
 */
 
-/**Inizio regole generali**/
+/**Inizio regole generali*/
+/* latin-ext
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal, bold;
+  font-weight: 400;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v6/s2PXW4WrV3VLrOUpHiqsffFC_w5J6O5PEm5icuu-cHc.woff) format('woff');
+}*/
 
 /*regole da applicare all'header*/
 header{
+    z-index: 100;
     background-image: linear-gradient(#20B6C3 0%, #A9D8C8 100%);
     display:inline-block;
     position: fixed;
@@ -75,7 +83,7 @@ body{
 
 /*Stile titoli h1*/
 h1{
-    color: #95C92C;
+    color: #76CBB4;
     font: 30px/40px "Quicksand", Lato, sans-serif;
     font-weight: bold;
     text-align: center;  
@@ -159,7 +167,7 @@ form input:focus, form textArea:focus{
 
 /*Stile button*/
 form button{
-    background-color: #B4DDD0;
+    background-color: #A8D8C8;
     border-style: hidden;
     border-radius:48px;
     height: 30px;
@@ -172,7 +180,7 @@ form button{
 /*Stile quando si preme sul button*/
 form button:focus{
     outline: none;
-    background-color: #64C9CE;
+    background-color: #76CBB4;
 }
 
 li{
@@ -242,10 +250,11 @@ div#Sommario{
 div#Sommario h1{
     text-align: center;
 }
+
 /*I link del Sommario riportano all'altezza giusta'*/
 :target{
-    padding-top: 80px;
-    margin-top: -80px;
+    padding-top: 85px;
+    margin-top: -85px;
 }
 
 /*Stile link del sommario*/
@@ -280,7 +289,8 @@ div#info1, div#info2, div#info3{
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 40px;
-    margin-right: 40px;    
+    margin-right: 40px;
+   
 }
 
 /*Primo box allineato a sinistra*/
@@ -325,7 +335,7 @@ div#formLogin{
     background-color: #ffffff;
     border-radius: 48px;
     border-style: solid;  
-    border-color: #64C9CE;
+    border-color: #76CBB4;
     width: 500px;
     height: 300px;
     margin-left: auto;
@@ -462,6 +472,8 @@ div#posts{
 }
 /*Fine Pagina Bacheca*/
 
+
+
 /*Inizio Pagina Profilo*/
 
 /*posizione e grandezza del form*/
@@ -475,8 +487,11 @@ div#formProfilo{
     
 }
 
-div#formProfilo{    
-    overflow: hidden; 
+
+div#dimFotoProfilo{
+    width: 270px;
+    height:270px;
+    position: absolute;
 }
 
 div#dimFotoProfilo img{
@@ -484,9 +499,16 @@ div#dimFotoProfilo img{
     width: 270px;
     height: auto;
     float: left;
-    margin: 30px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dimFoto{
+    overflow: hidden;
     border-radius: 20px;
-     
+    margin: 30px;
+    position: relative;
 }
 
 .Profilo{
@@ -515,6 +537,7 @@ div#dimFotoProfilo img{
     text-indent: 5px;
     resize: none;
 }
+
 .Profilo textarea:focus{
     border-radius: 20px;
 }
@@ -556,10 +579,3 @@ div#info2 p::before{
     vertical-align: top;
 }
 
-/* latin-ext */
-@font-face {
-  font-family: 'Quicksand';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v6/s2PXW4WrV3VLrOUpHiqsffFC_w5J6O5PEm5icuu-cHc.woff) format('woff');
-}
