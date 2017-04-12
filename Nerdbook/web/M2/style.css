@@ -213,7 +213,7 @@ div#sidebar{
     border-radius: 48px;
     top:90px;
     width: 20%;
-    height: 500px;
+    height: 78.5%;
     padding-right: 20px;
     padding-bottom: 20px;
     float: left;
@@ -240,6 +240,17 @@ input#searchBar{
     height: 30px;
     border-radius: 80px;
 }
+
+/*Stile link persone e gruppi*/
+.persona a, .gruppo a{
+    padding-left: 5px;
+    vertical-align: top;
+}
+/*Se si passa sopra il link questo diventa bold*/
+.persona a:hover, .gruppo a:hover{
+    font-weight: normal;
+}
+
 
 /**Fine regole generali**/
 
@@ -341,6 +352,8 @@ div#info4 p{
 /*Fine pagina Descrizione*/
 
 /*Inizio Pagina Bacheca*/
+
+/*Posizione dell'utente nella navbar'*/
 #utenteBarra{
     display: inline-block;
     float: right;
@@ -348,13 +361,14 @@ div#info4 p{
     height: 20px;
 }
 
+/*stile link per l'utente nella navbar'*/
 #utenteBarra a{
     width: 100px;
     font: 17px/20px "Quicksand", Lato, sans-serif;
     text-align: left;
 }
 
-/*Stile foto del profilo nella barra*/
+/*Stile foto del profilo nella navbar*/
 #fotoProfiloBarra{
     float:left;
     width:30px;
@@ -365,36 +379,25 @@ div#info4 p{
     margin-right: 8px;
 }
 
+/*Utente e logut in due linee diverse*/
 .profiloAttivoBarra{    
     display: block;
-    text-align: center;
     float: right;
-    font-size: 5px;
 }
 
-/*Stile link persone e gruppi*/
-.persona a, .gruppo a{
-    padding-left: 5px;
-    vertical-align: top;
-}
-
-/*Se si passa sopra il link questo diventa bold*/
-.persona a:hover, .gruppo a:hover{
-    font-weight: normal;
-}
-
-/*Stile del profilo attivo con la descrizione*/
+/*Posizione e dimnesioni profilo attivo con la descrizione*/
 div#profiloAttivo{
     float:left;    
     width: 70%;
-    margin-right: 30px;
-    margin-left: 300px;
+    margin-left: 25%;
 }
 
 /*stile descrizione del profilo attivo*/
 div#profiloAttivo p{
+    padding: 10px;
     display: inline;
     vertical-align: top;
+
 }
 
 /*posizione e grandezza dei post*/
@@ -402,7 +405,7 @@ div#posts{
     float:left;    
     width: 70%;    
     margin:auto;
-    padding-left: 325px;
+    padding-left: 28%;
 }
 
 /*Stile post e profilo attivo*/
@@ -443,15 +446,17 @@ div#posts{
 
 /*Grandezza immagine condivisa*/
 .content img{
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
 /*Stile link condivisi in un post*/
 .content a:link, .content a:visited{    
+    font-size: 18px;
     font-weight: normal;
     color: #64C9CE;
 }
+
 /*Stile link condivisi in un post quando si va sopra*/
 .content a:hover{    
     font-weight: bold;
@@ -494,7 +499,7 @@ div#formLogin form div{
 
 /*Inizio Pagina Profilo*/
 
-/*posizione e grandezza del form*/
+/*Posizione e grandezza del form*/
 div#formProfilo{   
     float:left;    
     width: 70%;    
@@ -511,7 +516,7 @@ div#dimFotoProfilo{
     position: absolute;
 }
 
-/*foto posizionata all'interno del div*/
+/*Foto posizionata all'interno del div*/
 div#dimFotoProfilo img{
     position: absolute;
     width: 270px;
@@ -541,6 +546,7 @@ div#dimFotoProfilo img{
     margin-bottom: 15px;
     margin-top: 5px;
 }
+
 /*Stile input textarea*/
 .Profilo textarea{
     border-radius: 20px;
@@ -549,6 +555,7 @@ div#dimFotoProfilo img{
     text-indent: 5px;
     resize: none;
 }
+
 /*Stile button aggiorna*/
 .Profilo button{
     width:56%;
@@ -613,6 +620,13 @@ div#dimFotoProfilo img{
         font: 18px/22px "Lato", Arial, sans-serif;
         font-weight: lighter;
     }
+    
+    /*Stile side bar (left)*/
+    div#sidebar{
+        top:90px;
+        float: left;
+        position: fixed;
+    }
 
 }
 
@@ -622,7 +636,7 @@ div#dimFotoProfilo img{
    
     /*Regole generali*/
     header{
-        height: 94px;  
+        height: auto;  
     }
     
     nav li{
@@ -657,10 +671,32 @@ div#dimFotoProfilo img{
         font: 18px/22px "Lato", Arial, sans-serif;
         font-weight: lighter;
     }
-    
     div#divBody{
-        margin-top: 110px;  
+        margin-top: 8%;  
     }
+    div#sidebar{
+        top: 13%;
+        width: 18%;
+        padding-bottom: 18px;
+        float: left;
+    }
+    div#sidebar h2{
+        padding-left: 25px;
+    }
+    input#searchBar{
+        margin-top:30px;
+        margin-left: 40px;
+        width: 60%;
+    }
+    .persona img, .gruppo img{
+        width: 18px;
+        height: 18px;
+    }
+    a:link, a:visited{
+        font: 14px/20px "Lato", Arial, sans-serif;
+        font-weight: lighter;
+    }
+
     
     /*Pagina descrizione*/
     div#Sommario{
@@ -690,8 +726,50 @@ div#dimFotoProfilo img{
         margin-right: 10pX;
     }
     
-    /*Pagina Bacheca*/
     
+    /*Pagina Bacheca*/
+    #utenteBarra a{
+        width: 100px;
+        font: 13px/20px "Quicksand", Lato, sans-serif;
+    }
+    #fotoProfiloBarra{
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;   
+        margin-right: 4px;
+    }
+    div#profiloAttivo{  
+        width: 66%;    
+        margin-left: 28%;
+    }
+    div#profiloAttivo p{
+        padding: 7px;
+        display: inline-block;
+    }
+    div#posts{
+        padding-left: 28%;
+    }
+    .post, div#profiloAttivo{
+        padding: 15px;
+        margin-bottom: 8px;
+    }
+    .fotoProfilo{
+        width: 40px;
+        height: 40px;
+    }
+    .nomeUtente{
+        padding-left: 8px;
+    }
+    .content{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .content img{
+        width: 70%;
+        height: auto;
+    }
+
+
     /*Pagina Login*/
     div#formLogin{
         width: 400px;
@@ -699,6 +777,43 @@ div#dimFotoProfilo img{
     }
 }
 
+@media only screen and (max-width: 900px){
+    header{
+        height: 120px;  
+    }
+    div#sidebar{
+        top: 130px;
+        width: 24%;
+        height:auto;
+        padding-bottom: 18px;
+        margin-left: -10px;
+        float: left;
+        position: absolute; 
+    }
+    div#sidebar h2{
+        padding-left: 20px;
+    }
+    input#searchBar{
+        margin-top:30px;
+        margin-left: 20px;
+        width: 80%;
+    }
+    a:link, a:visited{
+        font: 12px/18px "Lato", Arial, sans-serif;
+        font-weight: lighter;
+        padding-left: 0px;
+    }
+    div#profiloAttivo{  
+        width: 66%;    
+        margin-left: 32%;
+    }
+    div#divBody{
+       margin-top: 130px;
+    }
+    div#posts{
+        padding-left: 32%;
+    }
+}
 
 /*Dimensioni minori a 480px*/
 @media only screen and (max-width: 480px){
@@ -706,16 +821,39 @@ div#dimFotoProfilo img{
     header{
         height: auto;
     }
-    
     nav li a:link, nav li a:visited{
         text-decoration: none;
         font: 13px/20px "Quicksand", Lato, sans-serif;
         color: #ffffff;
     }
-    
-    /*spaziatura per l'ultimo elemento della navbar*/
     nav li:last-child{
         padding-right: 20px;
+    }
+    div#sidebar{
+        top:auto;
+        float: none;
+        width: 95%;
+        height: auto;
+        margin: auto;
+        position: relative;
+        display: block;
+    }
+    input#searchBar{
+        margin-left: 40px;
+        margin-right: auto;
+        width: 80%;
+    }
+    div#sidebar h2{
+        padding-left: 40px;
+        font-size: 20px;
+    }
+    a:link, a:visited{
+        font: 18px/25px "Lato", Arial, sans-serif;
+        font-weight: lighter;
+    }
+    .persona a, .gruppo a{
+        padding-left: 8px;
+        vertical-align: top;
     }
 
     /*Pagine descrizione*/
@@ -740,9 +878,27 @@ div#dimFotoProfilo img{
         padding: 0px;
         margin-right: 10pX;
     }
-        
-    /*Pagina Bacheca*/
     
+    
+    /*Pagina Bacheca*/
+    div#profiloAttivo{
+        position: relative;
+        display: block;
+        width: 95%;
+        margin:auto;
+        margin-top: 20px;
+    }
+    div#posts{
+        display: block;
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        padding: 0px;
+        
+    }
+    .content img{
+        width: 80%;
+    }
     /*Pagina Login*/
     div#formLogin{
         width: 90%;
