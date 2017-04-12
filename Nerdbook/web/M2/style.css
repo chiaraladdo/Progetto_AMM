@@ -285,7 +285,7 @@ div#info4 p{
     margin-right: 8px;
 }
 
-/*Utente e logut in due linee diverse*/
+/*Utente e logout in due linee diverse*/
 .profiloAttivoBarra{    
     display: block;
     float: right;
@@ -733,7 +733,6 @@ div#dimFotoProfilo img{
         margin-top: 120px; 
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: auto
     }
     div#Sommario a:link, div#Sommario a:visited{
         font: 18px/25px "Lato", Arial, sans-serif;
@@ -994,7 +993,6 @@ div#dimFotoProfilo img{
         padding-bottom: 20px;  
     }
     div#Sommario a:link, div#Sommario a:visited{
-        padding: auto;
         font-size: 18px;
     }
     :target{
@@ -1039,7 +1037,6 @@ div#dimFotoProfilo img{
     }
 
     
-    
     /*Pagina Login*/
     div#formLogin{
         width: 90%;
@@ -1048,8 +1045,7 @@ div#dimFotoProfilo img{
         margin-top: 140px;
     }
     
-    
-   
+
     /*Pagina Profilo*/
     div#formProfilo{    
         width: 100%;
