@@ -504,22 +504,22 @@ div#formProfilo{
     float:left;    
     width: 70%;    
     margin:auto;
-    margin-left: 325px;
+    margin-left: 26%;
     background: #ffffff;
     border-radius: 48px;   
 }
 
 /*Dimensione div foto del profilo*/
 div#dimFotoProfilo{
-    width: 270px;
-    height:270px;
+    width: 230px;
+    height:230px;
     position: absolute;
 }
 
 /*Foto posizionata all'interno del div*/
 div#dimFotoProfilo img{
     position: absolute;
-    width: 270px;
+    width: 230px;
     height: auto;
     float: left;
     top: 50%;
@@ -627,6 +627,31 @@ div#dimFotoProfilo img{
         float: left;
         position: fixed;
     }
+    
+    /*Pagina Profilo*/
+    div#formProfilo{    
+        width: 74%;
+    }
+    div#dimFotoProfilo{
+        width: 240px;
+        height:240px;
+    }
+    div#dimFotoProfilo img{
+        width: 240px;
+    }
+    .Profilo input{
+        width: 170px;
+    }
+    .Profilo textarea{
+        width: 170px;
+    }
+    .Profilo label{ 
+         margin-left: 43%;
+         font-size: 16px;
+    }
+    .Profilo button{
+        width:58%;
+    }
 
 }
 
@@ -635,26 +660,18 @@ div#dimFotoProfilo img{
 @media only screen and (max-width:1023px){
    
     /*Regole generali*/
-    header{
-        height: auto;  
-    }
-    
     nav li{
         padding-left: 10px;
         padding-right: 10px;
     }
-    
     nav li a:link, nav li a:visited{
         text-decoration: none;
         font: 17px/20px "Quicksand", Lato, sans-serif;
         color: #ffffff;
     }
-    /*spaziatura per l'ultimo elemento della navbar*/
     nav li:last-child{
         padding-right: 50px;
     }
-
-    
     h1{
         font: 25px/30px "Quicksand", Lato, sans-serif;
         font-weight: bold; 
@@ -775,9 +792,36 @@ div#dimFotoProfilo img{
         width: 400px;
         height: 270px;
     }
+    
+    /*Pagina Profilo*/
+    div#formProfilo{    
+        width: 74%;
+    }
+    div#dimFotoProfilo{
+        width: 210px;
+        height:210px;
+    }
+    div#dimFotoProfilo img{
+        width: 210px;
+    }
+    .Profilo input{
+        width: 160px;
+    }
+    .Profilo textarea{
+        width: 160px;
+    }
+    .Profilo label{ 
+         margin-left: 40%;
+         font-size: 14px;
+    }
+    .Profilo button{
+        width:60%;
+    }
+
 }
 
 @media only screen and (max-width: 900px){
+    /*Regole generali*/
     header{
         height: 120px;  
     }
@@ -803,23 +847,81 @@ div#dimFotoProfilo img{
         font-weight: lighter;
         padding-left: 0px;
     }
+    div#divBody{
+       margin-top: 130px;
+    }
+    
+    
+    /*Pagina Descrizione*/
+    div#Sommario{
+        margin-top: 130px;
+    }
+    :target{
+        padding-top: 120px;
+        margin-top: -120px;
+    }
+    
+    
+    /*Pagina Bacheca*/
     div#profiloAttivo{  
         width: 66%;    
         margin-left: 32%;
     }
-    div#divBody{
-       margin-top: 130px;
-    }
     div#posts{
         padding-left: 32%;
     }
+    div#dimFotoProfilo{
+        width: 170px;
+        height:170px;
+    }
+    div#dimFotoProfilo img{
+        width: 170px;
+    }
+    
+    
+    /*Pagina Profilo*/
+    div#formProfilo{    
+        width: 70%;
+        margin-left: 33%;
+    }
+    div#dimFotoProfilo{
+        width: 240px;
+        height:240px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display:block;
+    }
+    div#dimFotoProfilo img{
+        width: 240px;
+    }
+    .Profilo{
+        float:left;
+        margin-left: 50%;
+        transform: translate(-50%,0);
+    }
+    .Profilo input, .Profilo textArea, .Profilo button{   
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Profilo label{ 
+        width: 100%;
+        margin-left: auto;
+        margin-right:auto;
+        margin-top:20px;
+        margin-bottom:10px;
+        font-size: 20px;
+        text-align: center;
+    }
+
 }
 
 /*Dimensioni minori a 480px*/
 @media only screen and (max-width: 480px){
     
     header{
-        height: auto;
+        height: 120px;
     }
     nav li a:link, nav li a:visited{
         text-decoration: none;
@@ -858,13 +960,15 @@ div#dimFotoProfilo img{
 
     /*Pagine descrizione*/
     div#Sommario{
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 120px;
+        margin-top: 130px;
     }
     div#Sommario a:link, div#Sommario a:visited{
         padding: auto;
         font-size: 18px;
+    }
+    :target{
+        padding-top: 120px;
+        margin-top: -120px;
     }
     div#info1, div#info2, div#info3{
         text-align: center;
@@ -893,27 +997,31 @@ div#dimFotoProfilo img{
         width: 100%;
         margin: auto;
         margin-top: 20px;
-        padding: 0px;
-        
+        padding: 0px;   
     }
     .content img{
         width: 80%;
     }
+    
+    
     /*Pagina Login*/
     div#formLogin{
         width: 90%;
-        
     }
     #divBody h1{
         margin-top: 140px;
     }
-    /*Elementi del form all'interno del box*/
-    div#formLogin form input, #formLogin form button{
-
-        width: 40%;
-        margin-left:auto;
-        margin-right: auto;
-        text-align: center;
+    
+    
+   
+    /*Pagina Profilo*/
+    div#formProfilo{    
+        width: 100%;
+        margin:auto;
+        margin-top: 20px;
+    }
+    .Profilo label{ 
+        font-size: 15px;
     }
 }
 
@@ -922,7 +1030,7 @@ div#dimFotoProfilo img{
  *non sono immagini da gestire nell'html perchè non sono legate 
  *ad utenti e gruppi, ma solo descrittive*/
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1094px){
        
     div#info1 p::after{
     display:inline-block;
@@ -934,7 +1042,7 @@ div#dimFotoProfilo img{
     div#info2 p::before{        
     display: inline-block;
     padding-right: 300px;
-    content: url("img/img2.png");
+    content: url("img/img.png");
     vertical-align: top;
     }
 }
