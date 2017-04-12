@@ -571,7 +571,6 @@ div#dimFotoProfilo img{
     form textArea{
         height:50px;
     }
-   
     
     /*Stile side bar*/
     div#sidebar{
@@ -857,7 +856,7 @@ div#dimFotoProfilo img{
         width: 24%;
         height:auto;
         padding-bottom: 18px;
-        margin-left: -10px;
+        margin-left: 5px;
         float: left;
         position: absolute; 
     }
