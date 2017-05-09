@@ -1,6 +1,5 @@
 package amm.nerdbook.model;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -28,26 +27,26 @@ public class GruppoFactory {
         Gruppo gruppo1 = new Gruppo();
         gruppo1.setId(0);
         gruppo1.setNome("Grifondoro");
-        //gruppo1.setListaUtenti(gruppo1.getListaUtenti());
+        gruppo1.setListaUtenti(null);
         
         listaGruppo.add(gruppo1);
         
         Gruppo gruppo2 = new Gruppo();
         gruppo2.setId(1);
         gruppo2.setNome("Tassorosso");
-        //gruppo2.setListaUtenti(gruppo2.getListaUtenti());
+        gruppo2.setListaUtenti(null);
         listaGruppo.add(gruppo2);
         
         Gruppo gruppo3 = new Gruppo();
         gruppo3.setId(1);
         gruppo3.setNome("Corvonero");
-        //gruppo3.setListaUtenti(gruppo3.getListaUtenti());
+        gruppo3.setListaUtenti(null);
         listaGruppo.add(gruppo3);
         
         Gruppo gruppo4 = new Gruppo();
         gruppo4.setId(1);
         gruppo4.setNome("Serpeverde");
-        //gruppo4.setListaUtenti(gruppo4.getListaUtenti());
+        gruppo4.setListaUtenti(null);
         listaGruppo.add(gruppo4);
     }
 
@@ -55,6 +54,15 @@ public class GruppoFactory {
     public Gruppo getGruppoById(int id) {
         for (Gruppo gruppo : this.listaGruppo) {
             if (gruppo.getId() == id) {
+                return gruppo;
+            }
+        }
+        return null;
+    }
+    
+     public Gruppo getGruppoByNome(String nome) {
+        for (Gruppo gruppo : this.listaGruppo) {
+            if ((gruppo.getNome()).equals(nome)) {
                 return gruppo;
             }
         }
