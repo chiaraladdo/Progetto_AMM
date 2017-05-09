@@ -1,0 +1,64 @@
+package amm.nerdbook.model;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Chiara
+ */
+public class GruppoFactory {
+    
+    //Pattern Design Singleton
+    private static GruppoFactory singleton;
+
+    public static GruppoFactory getInstance() {
+        if (singleton == null) {
+            singleton = new GruppoFactory();
+        }
+        return singleton;
+    }
+    
+    private ArrayList<Gruppo> listaGruppo = new ArrayList<Gruppo>();
+    
+    private GruppoFactory() {
+        
+        UtenteFactory utenteFactory = UtenteFactory.getInstance();
+
+        //Creazione Gruppo
+        Gruppo gruppo1 = new Gruppo();
+        gruppo1.setId(0);
+        gruppo1.setNome("Grifondoro");
+        //gruppo1.setListaUtenti(gruppo1.getListaUtenti());
+        
+        listaGruppo.add(gruppo1);
+        
+        Gruppo gruppo2 = new Gruppo();
+        gruppo2.setId(1);
+        gruppo2.setNome("Tassorosso");
+        //gruppo2.setListaUtenti(gruppo2.getListaUtenti());
+        listaGruppo.add(gruppo2);
+        
+        Gruppo gruppo3 = new Gruppo();
+        gruppo3.setId(1);
+        gruppo3.setNome("Corvonero");
+        //gruppo3.setListaUtenti(gruppo3.getListaUtenti());
+        listaGruppo.add(gruppo3);
+        
+        Gruppo gruppo4 = new Gruppo();
+        gruppo4.setId(1);
+        gruppo4.setNome("Serpeverde");
+        //gruppo4.setListaUtenti(gruppo4.getListaUtenti());
+        listaGruppo.add(gruppo4);
+    }
+
+    
+    public Gruppo getGruppoById(int id) {
+        for (Gruppo gruppo : this.listaGruppo) {
+            if (gruppo.getId() == id) {
+                return gruppo;
+            }
+        }
+        return null;
+    }
+    
+}
