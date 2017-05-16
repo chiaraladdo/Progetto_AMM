@@ -7,7 +7,7 @@ package amm.nerdbook.model;
 public class Post{
     
     public enum Tipo{
-        TEXT, IMAGE, URL
+        NONE, IMAGE, URL
     };
 
     protected int id;
@@ -16,13 +16,15 @@ public class Post{
     protected Gruppo gruppo;
     private String contenuto;
     private Tipo tipoPost;
+    private String contenutoTipo;
     
     /*Costruttore*/
     public Post(){
         id = 0;
         utente = null;
         contenuto = "";
-        tipoPost = Tipo.TEXT;
+        tipoPost = Tipo.NONE;
+        contenutoTipo = null;
     }
     
     /*Getter e Setter*/
@@ -72,6 +74,14 @@ public class Post{
 
     public void setTipoPost(Tipo tipoPost){
         this.tipoPost = tipoPost;
+    }
+    
+    public String getContenutoTipo() {
+        return contenutoTipo;
+    }
+
+    public void setContenutoTipo(String contenutoTipo) {
+        this.contenutoTipo = contenutoTipo;
     }
 
 }

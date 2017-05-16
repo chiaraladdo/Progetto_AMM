@@ -31,18 +31,21 @@ public class PostFactory {
         post1.setContenuto("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
         post1.setId(0);
         post1.setUtente(utenteFactory.getUtenteById(0));
+        
 
         Post post2 = new Post();
-        post2.setContenuto("img/naso1.jpg");
+        post2.setContenuto("Cosa ne pensate amici? mi starebbe bene?");
         post2.setId(1);
         post2.setUtente(utenteFactory.getUtenteById(1));
         post2.setTipoPost(Post.Tipo.IMAGE);
+        post2.setContenutoTipo("img/naso1.jpg");
 
         Post post3 = new Post();
-        post3.setContenuto("http://it.harrypotter.wikia.com/wiki/Grattastinchi");
+        post3.setContenuto("Miao aMici, sono famoso!");
         post3.setId(2);
         post3.setUtente(utenteFactory.getUtenteById(2));
         post3.setTipoPost(Post.Tipo.URL);
+        post3.setContenutoTipo("http://it.harrypotter.wikia.com/wiki/Grattastinchi");
 
         listaPost.add(post1);
         listaPost.add(post2);
