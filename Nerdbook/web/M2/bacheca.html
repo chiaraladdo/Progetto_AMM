@@ -46,9 +46,7 @@
         </header>
         
         <div id="divBody">
-            
-            
-                        
+                    
             <div id = "sidebar">
                 
                 <form>
@@ -125,7 +123,47 @@
                     <input type="radio" name="nuovoPost" value="immagine" id="tipoImmagine">
                     <input type="radio" name="nuovoPost" value="url" id="tipoUrl">                  
                 </form>
-            </div>--!>
+            </div> -->
+            
+            <!--Nuovo Post-->
+            <div id="nuovoPost">
+                
+                <form action="servlet.java" method="post">
+                      
+                    <textarea name="textPost" id="textPost"></textarea>
+                    
+                    <div id="contenutoAllegato">
+                        
+                        <div id="imgAllegato">
+                            <label for="imgPost">Foto</label>
+                            <input type="file" name="imgPost" id="imgPost">
+                        </div>
+
+                        <div>
+                            <label for="urlPost">Url</label>
+                            <input type="url" name="urlPost" id="urlPost">
+                        </div>
+
+                    </div>
+                    
+                    <div id="tipoPost">
+                        
+                        <div>
+                            <label for="imgType">Foto</label>
+                            <input type="radio" name="postType" value="imgType" id="imgType">
+                        </div>
+                        
+                        <div>
+                            <label for="urlType">Url</label>
+                            <input type="radio" name="postType" value="urlType" id="urlType">
+                        </div>
+                        
+                    </div>
+                    
+                    <button type="submit">Invia</button>
+                </form>
+                
+            </div>
             
             <div id="posts">
                 
@@ -136,7 +174,7 @@
                     <div class="content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis sit amet tellus dignissim pretium. Vivamus non ultrices metus. Mauris elementum arcu libero, nec sodales eros tempor ut. Fusce erat velit, placerat id libero non, viverra dapibus nisi. Sed luctus neque et odio tincidunt, eget dapibus odio tempor. Sed et erat purus. Proin in dui ultricies, vulputate ante sit amet, accumsan tortor.</p> 
                     </div>
-                    </div>
+                </div>
                 
                 <!--Post con immagine-->
                 <div id="post2" class = "post">
@@ -156,12 +194,11 @@
                         <p>Miao aMici, sono famoso (PS. Meglio GatTeender di Nerdbook)</p>
                         <a href="http://it.harrypotter.wikia.com/wiki/Grattastinchi" target="_blank">www.miaoamici.meow</a>      
                     </div>
-                    </div>
+                </div>
             
             </div>    
         </div>
-        
-        
+               
     </body>
     
 </html>

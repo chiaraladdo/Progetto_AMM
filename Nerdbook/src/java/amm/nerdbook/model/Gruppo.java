@@ -10,6 +10,8 @@ public class Gruppo{
 
     protected int id;
     private String nome;
+    private String urlFotoGruppo;
+    
     private ArrayList <Utente> listaUtenti = new ArrayList <>();
     
     /*Costruttore*/
@@ -41,5 +43,13 @@ public class Gruppo{
 
     public void setListaUtenti(ArrayList<Utente> listaUtenti) {
         this.listaUtenti = listaUtenti;
+    }
+    
+    public String getUrlFotoGruppo() {
+        return urlFotoGruppo;
+    }
+
+    public void setUrlFotoGruppo(String urlFotoGruppo) {
+        this.urlFotoGruppo = urlFotoGruppo;
     }
 }

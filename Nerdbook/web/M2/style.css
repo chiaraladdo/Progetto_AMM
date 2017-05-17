@@ -290,10 +290,50 @@ div#info4 p{
     margin-right: 8px;
 }
 
+/*Stile nuovo post*/
+div#nuovoPost{
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 48px;
+    width: 70%;    
+    margin-top: 1%;
+    margin-bottom:7%;
+    margin-left: 28%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+div#nuovoPost textArea{
+    height: 150px;
+    width: 250px;
+    float: left;
+    margin: 30px;
+}
+div#nuovoPost div#tipoPost div{
+    display: inline-block;
+    margin: 10px;
+
+}
+div#nuovoPost div#tipoPost input{
+    height: auto;
+    width: auto;
+
+}
+div#imgAllegato{
+    height: auto;
+    width: auto;
+    border: none;
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    
+}
+
 /*Utente e logout in due linee diverse*/
 .profiloAttivoBarra{    
     display: block;
     float: right;
+    
 }
 
 /*Posizione e dimensioni profilo attivo con la descrizione*/
@@ -856,7 +896,7 @@ div#dimFotoProfilo img{
         width: 24%;
         height:auto;
         padding-bottom: 18px;
-        margin-left: 5px;
+        margin-left: 10px;
         float: left;
         position: absolute; 
     }
@@ -1072,7 +1112,6 @@ div#dimFotoProfilo img{
 /*Immagini puramente decorative pagina Descrizione(Nerd+login), 
  *non sono immagini da gestire nell'html perchè non sono legate 
  *ad utenti e gruppi, ma solo descrittive*/
-
 @media only screen and (min-width: 1094px){
        
     div#info1 p::after{
