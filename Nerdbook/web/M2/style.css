@@ -297,26 +297,29 @@ div#nuovoPost{
     border-radius: 48px;
     width: 70%;    
     margin-top: 1%;
-    margin-bottom:7%;
+    margin-bottom:4%;
     margin-left: 28%;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
 }
 div#nuovoPost textArea{
-    height: 150px;
-    width: 250px;
-    float: left;
-    margin: 30px;
+    height: 60px;
+    width: 40%;
+    border-radius: 10px;
 }
 div#nuovoPost div#tipoPost div{
     display: inline-block;
     margin: 10px;
 
 }
-div#nuovoPost div#tipoPost input{
+div#tipoPost div input{
     height: auto;
     width: auto;
+}
+div#nuovoPost div#contenutoAllegato input{
+    height: auto;
+    width: 40%;
 
 }
 div#imgAllegato{
@@ -327,6 +330,10 @@ div#imgAllegato{
     border-style: none;
     box-shadow: none;
     
+}
+div#nuovoPost form button{
+    margin: 10px;
+    width: 40%;
 }
 
 /*Utente e logout in due linee diverse*/

@@ -130,37 +130,39 @@
                 
                 <form action="servlet.java" method="post">
                       
+                    <p>Crea un post</p>
                     <textarea name="textPost" id="textPost"></textarea>
                     
+                    <div id="tipoPost">
+                        
+                        <div>
+                            <label for="imgType">Foto</label>
+                            <input type="radio" name="tipoPost" value="imgType" id="imgType">
+                        </div>
+                        
+                        <div>
+                            <label for="urlType">Url</label>
+                            <input type="radio" name="tipoPost" value="urlType" id="urlType">
+                        </div>
+                        
+                    </div>
+                    
                     <div id="contenutoAllegato">
+                        
+                        <div>
+                            <label for="urlPost">Url</label>
+                            <input type="url" name="urlPost" id="urlPost">
+                        </div>
                         
                         <div id="imgAllegato">
                             <label for="imgPost">Foto</label>
                             <input type="file" name="imgPost" id="imgPost">
                         </div>
 
-                        <div>
-                            <label for="urlPost">Url</label>
-                            <input type="url" name="urlPost" id="urlPost">
-                        </div>
-
                     </div>
                     
-                    <div id="tipoPost">
-                        
-                        <div>
-                            <label for="imgType">Foto</label>
-                            <input type="radio" name="postType" value="imgType" id="imgType">
-                        </div>
-                        
-                        <div>
-                            <label for="urlType">Url</label>
-                            <input type="radio" name="postType" value="urlType" id="urlType">
-                        </div>
-                        
-                    </div>
                     
-                    <button type="submit">Invia</button>
+                    <button type="submit">Crea Post</button>
                 </form>
                 
             </div>
