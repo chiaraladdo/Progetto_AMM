@@ -27,12 +27,8 @@
 
     <body>
         
-        <!--Titolo della pagina-->
+        <!--Titolo della pagina e barra di navigazione tra le pagine del sito-->
         <c:set var="title" value="Bacheca" scope="request"/>
-        <jsp:include page="header.jsp"/>
-
-        <!--Barra di navigazione tra le pagine del sito-->
-        <c:set var="page" value="bacheca" scope="request"/>
         <jsp:include page="header.jsp"/>
 
         <!--Contenuti della pagina-->
@@ -43,25 +39,37 @@
             
             <!--Nuovo Post-->
             <div id="nuovoPost">
-                
                 <form action="servlet.java" method="post">
-                    <div id="contenutoPost">
-                        <textarea name="textPost" id="textPost"></textarea>
-                        <input type="file" name="imgPost" id="imgPost">
-                        <input type="url" name="urlAllegato" id="urlAllegato"> 
-                    </div>
+                      
+                    <p>Crea un post</p>
+                    <textarea name="textPost" id="textPost"></textarea>
+                    
                     <div id="tipoPost">
                         <div>
-                            <label for="textType">Url</label>
-                            <input type="radio" name="postType" value="textType" id="textType">
-                        </div>
-                        <div>
                             <label for="imgType">Foto</label>
-                            <input type="radio" name="postType" value="imgType" id="imgType">
+                            <input type="radio" name="tipoPost" value="imgType" id="imgType">
+                        </div>
+                        
+                        <div>
+                            <label for="urlType">Url</label>
+                            <input type="radio" name="tipoPost" value="urlType" id="urlType">
                         </div>
                     </div>
                     
-                    <button type="submit">Pubblica</button>
+                    <div id="contenutoAllegato"> 
+                        <div>
+                            <label for="urlPost">Url</label>
+                            <input type="url" name="urlPost" id="urlPost">
+                        </div>
+                        
+                        <div id="imgAllegato">
+                            <label for="imgPost">Foto</label>
+                            <input type="file" name="imgPost" id="imgPost">
+                        </div>
+                    </div>
+                    
+                    <button type="submit">Crea Post</button>
+                    
                 </form>
             </div>
             
