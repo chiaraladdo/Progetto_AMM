@@ -6,27 +6,26 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <header>
     
     <div id="title">
-        Nerdbook - ${title}
+        Nerdbook
     </div>
     
     <nav>
         <ul>
-            <li<c:if test="${page=='descrizione'}"> class="active"</c:if>><a href="descrizione.html">Descrizione</a></li>
-            
-            <c:if test="${page=='bacheca'}"> class="active"
-                <li><a href="Bacheca">Bacheca Personale</a></li>
-            </c:if>
-            
-            <c:if test="${page=='login'}"> class="active"
-                <li><a href="login.html">Login</a></li>
-            </c:if>
-            
-            <c:if test="${page=='profilo'}"> class="active"
-                <li><a href="profilo.html">Profilo</a></li>
-            </c:if>
+            <li<c:if test="${page=='descrizione'}"> class="active"</c:if>><a href="descrizione.jsp">Descrizione</a></li>
+            <li<c:if test="${page=='bacheca'}"> class="active"</c:if>><a href="bacheca.jsp">Bacheca</a></li>
+            <li<c:if test="${page=='login'}"> class="active"</c:if>><a href="login.jsp">Login</a></li>
+            <li<c:if test="${page=='profilo'}"> class="active"</c:if>><a href="profilo.jsp">Profilo</a></li>
+            <li>
+                <div id = "utenteBarra">
+                    <img id="fotoProfiloBarra" alt="fotoProfiloAttivo" src="img/profilePic.png">
+                    <a class="profiloAttivoBarra" href="profilo.html"> Zuzi </a>
+                    <a class="profiloAttivoBarra" href="login.html"> Logout </a>
+                </div>
+            </li> 
         </ul>
     </nav>
 

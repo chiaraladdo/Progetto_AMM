@@ -45,26 +45,29 @@
                     <textarea name="textPost" id="textPost"></textarea>
                     
                     <div id="tipoPost">
+                        
                         <div>
-                            <label for="imgType">Foto</label>
-                            <input type="radio" name="tipoPost" value="imgType" id="imgType">
+                            <label for="noneType">None</label>
+                            <input type="radio" name="tipoPost" value="noneType" id="noneType">
                         </div>
                         
                         <div>
                             <label for="urlType">Url</label>
                             <input type="radio" name="tipoPost" value="urlType" id="urlType">
                         </div>
+                        
+                        <div>
+                            <label for="imgType">Foto</label>
+                            <input type="radio" name="tipoPost" value="imgType" id="imgType">
+                        </div>
+                        
+                        
                     </div>
                     
                     <div id="contenutoAllegato"> 
                         <div>
                             <label for="urlPost">Url</label>
                             <input type="url" name="urlPost" id="urlPost">
-                        </div>
-                        
-                        <div id="imgAllegato">
-                            <label for="imgPost">Foto</label>
-                            <input type="file" name="imgPost" id="imgPost">
                         </div>
                     </div>
                     
