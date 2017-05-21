@@ -27,7 +27,7 @@
     <body>
         
         <!--Titolo della pagina e barra di navigazione tra le pagine del sito-->
-        <c:set var="title" value="Bacheca" scope="request"/>
+        <c:set var="title" value="Descrizione" scope="request"/>
         <jsp:include page="header.jsp"/>
         
         <!-- Info -->

@@ -21,9 +21,9 @@
             <li<c:if test="${page=='profilo'}"> class="active"</c:if>><a href="profilo.jsp">Profilo</a></li>
             <li>
                 <div id = "utenteBarra">
-                    <img id="fotoProfiloBarra" alt="fotoProfiloAttivo" src="img/profilePic.png">
-                    <a class="profiloAttivoBarra" href="profilo.html"> Zuzi </a>
-                    <a class="profiloAttivoBarra" href="login.html"> Logout </a>
+                    <img id="fotoProfiloBarra" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
+                    <a class="profiloAttivoBarra" href="profilo.jsp"> Zuzi </a>
+                    <a class="profiloAttivoBarra" href="login.jsp?logout"> Logout </a>
                 </div>
             </li> 
         </ul>

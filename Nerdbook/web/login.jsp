@@ -27,7 +27,7 @@
     <body>
         
        <!--Titolo della pagina e barra di navigazione tra le pagine del sito-->
-        <c:set var="title" value="Bacheca" scope="request"/>
+        <c:set var="title" value="Login" scope="request"/>
         <jsp:include page="header.jsp"/>
 
         
@@ -36,8 +36,12 @@
             
             <h1>Nerdbook - Login</h1>
             <div id="formLogin">
+                
+                <c:if test="${invalidData == true}">
+                    <div id="invalidDataWarning">I dati inseriti non sono corretti</div>
+                </c:if>
  
-                <form action="#login.html" method="post">
+                <form action="Login" method="post">
                     
                     <div>
                         <label for="username">Username</label>

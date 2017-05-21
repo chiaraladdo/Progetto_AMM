@@ -13,6 +13,7 @@ public class Utente{
     private String urlFotoProfilo;
     private String frase;
     private String data;
+    private String email;
     
     
     /*Costruttore*/
@@ -82,7 +83,13 @@ public class Utente{
         this.data = data;
     }
     
-    
-        
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
 }

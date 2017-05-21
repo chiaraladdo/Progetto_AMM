@@ -33,6 +33,7 @@ public class UtenteFactory{
         utente1.setUrlFotoProfilo("../web/M2/img/HarryPotter1.jpg");
         utente1.setFrase("Miaomiao");
         utente1.setData("31/07/1980");
+        utente1.setEmail("harrypotter80@miao.it");
         
 
         //Lord Voldemort
@@ -44,6 +45,7 @@ public class UtenteFactory{
         utente2.setUrlFotoProfilo("../web/M2/img/LordVoldemort1.jpg");
         utente2.setFrase("Miaomiao");
         utente2.setData("31/12/1926");
+        utente2.setEmail("lordvoldy@miao.it");
 
         //Grattastinchi
         Utente utente3 = new Utente();
@@ -54,6 +56,7 @@ public class UtenteFactory{
         utente3.setUrlFotoProfilo("../web/M2/img/Grattastinchi1.jpg");
         utente3.setFrase("Miaomiao");
         utente3.setData("01/01/2000");
+        utente3.setEmail("gattino@miao.it");
 
 
         listaUtenti.add(utente1);
@@ -72,10 +75,12 @@ public class UtenteFactory{
     
     public int getIdByUserAndPassword(String user, String password){
         for(Utente utente : this.listaUtenti){
-            if(utente.getNome().equals(user) && utente.getPassword().equals(password)){
+            
+            if(utente.getEmail().equals(user) && utente.getPassword().equals(password)){
                 return utente.getId();
             }
         }
+        
         return -1;
     }
     

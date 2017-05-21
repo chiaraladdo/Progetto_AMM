@@ -25,7 +25,7 @@
                 <ul>
                     <li class = "persona">
                         <img alt="fotoProfilo" src="${persona.urlFotoProfilo}">
-                        <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?utente= ${persona.id}">
+                        <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?utente=${persona.id}">
                             "${persona.nome} ${persona.cognome}"</a>
                     </li>
                 </ul>
