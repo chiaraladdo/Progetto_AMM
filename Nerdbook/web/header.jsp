@@ -22,8 +22,8 @@
             <li>
                 <div id = "utenteBarra">
                     <img id="fotoProfiloBarra" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
-                    <a class="profiloAttivoBarra" href="profilo.jsp"> Zuzi </a>
-                    <a class="profiloAttivoBarra" href="login.jsp?logout"> Logout </a>
+                    <a class="profiloAttivoBarra" href="profilo.jsp"> ${utente.nome}</a>
+                    <a class="profiloAttivoBarra" href="login.html?logout=1"> Logout </a>
                 </div>
             </li> 
         </ul>

@@ -41,7 +41,7 @@
                     <div id="invalidDataWarning">I dati inseriti non sono corretti</div>
                 </c:if>
  
-                <form action="Login" method="post">
+                <form action="login.html" method="post">
                     
                     <div>
                         <label for="username">Username</label>
@@ -50,7 +50,7 @@
 
                     <div>
                         <label for="pswd">Password</label>
-                        <input type="password" name="pswd" id="pswd"/>
+                        <input type="password" name="password" id="password"/>
                     </div>
                     
                     <button type="submit">Accedi</button> 

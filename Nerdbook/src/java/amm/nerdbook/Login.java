@@ -34,7 +34,7 @@ public class Login extends HttpServlet{
         if(request.getParameter("logout")!= null){
             
             session.invalidate();
-            request.getRequestDispatcher("Login").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
         }
         
@@ -43,12 +43,12 @@ public class Login extends HttpServlet{
         if (session.getAttribute("loggedIn") != null &&
             session.getAttribute("loggedIn").equals(true)){
 
-            request.getRequestDispatcher("Bacheca").forward(request, response);
+            request.getRequestDispatcher("descrizione.jsp").forward(request, response);
             return;
-        
-        //Se l'utente non è loggato...
+       
         } 
         
+        //Se l'utente non è loggato...
         else{
             
             String username = request.getParameter("username");
@@ -65,7 +65,7 @@ public class Login extends HttpServlet{
                     session.setAttribute("loggedIn", true);
                     session.setAttribute("loggedUserID", loggedUserID);
                     
-                    request.getRequestDispatcher("Bacheca").forward(request, response);
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
                     return;
                 }
                 
@@ -73,7 +73,7 @@ public class Login extends HttpServlet{
                     
                     //ritorno al form del login informandolo che i dati non sono validi
                     request.setAttribute("invalidData", true);
-                    request.getRequestDispatcher("Login").forward(request, response);
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                     return;
                 }
                 
@@ -86,7 +86,7 @@ public class Login extends HttpServlet{
           tentativo di accesso diretto alla servlet Login -> reindirizzo verso 
           il form di login.
         */
-        request.getRequestDispatcher("Login").forward(request, response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
