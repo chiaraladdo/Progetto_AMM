@@ -28,7 +28,7 @@ public class UtenteFactory{
         Utente utente1 = new Utente();
         utente1.setId(0);
         utente1.setNome("Harry");
-        utente1.setCognome("Potter");
+        //utente1.setCognome("Potter");
         utente1.setPassword("miao");
         utente1.setUrlFotoProfilo("../web/M2/img/HarryPotter1.jpg");
         utente1.setFrase("Miaomiao");
@@ -82,6 +82,19 @@ public class UtenteFactory{
         }
         
         return -1;
+    }
+    
+    public Boolean profiloCompleto(int id){
+        
+        if(getUtenteById(id).getNome()!= null 
+           && getUtenteById(id).getCognome()!= null 
+           && getUtenteById(id).getUrlFotoProfilo()!= null 
+           && getUtenteById(id).getFrase()!= null){
+            
+            return true;
+        }
+        
+        return false;
     }
     
 }

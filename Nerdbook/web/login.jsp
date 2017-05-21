@@ -35,10 +35,13 @@
         <div id = "divBody">           
             
             <h1>Nerdbook - Login</h1>
+            
             <div id="formLogin">
                 
                 <c:if test="${invalidData == true}">
-                    <div id="invalidDataWarning">I dati inseriti non sono corretti</div>
+                    <div id="invalidDataWarning">
+                        <p>I dati inseriti non sono corretti</p>
+                    </div>
                 </c:if>
  
                 <form action="login.html" method="post">

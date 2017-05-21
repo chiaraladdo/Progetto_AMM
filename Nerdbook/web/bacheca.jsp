@@ -37,6 +37,13 @@
             <!--Sidebar-->
             <jsp:include page="sidebar.jsp"/>
             
+            <!--ProfiloAttivo-->
+            <div id="profiloAttivo">
+               <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
+               <p class="nomeUtente">"${utente.nome}" "${utente.cognome}":</p>
+               <p class="content">"${utente.frase}"</p>
+            </div>
+            
             <!--Nuovo Post-->
             <div id="nuovoPost">
                 <form action="servlet.java" method="post">
@@ -75,14 +82,6 @@
                     
                 </form>
             </div>
-            
-            <!--ProfiloAttivo-->
-            <div id="profiloAttivo">
-               <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
-               <p class="nomeUtente">"${utente.nome}" "${utente.cognome}":</p>
-               <p class="content">"${utente.frase}"</p>
-            </div>
-            
             
             <!--lista dei post-->
             <div id="posts">

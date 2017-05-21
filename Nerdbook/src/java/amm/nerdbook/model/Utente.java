@@ -19,11 +19,11 @@ public class Utente{
     /*Costruttore*/
     public Utente(){
         this.id = 0;
-        this.nome = "";
-        this.cognome = "";
-        this.frase = "";
-        this.data = "";
-        this.password = "";
+        this.nome = null;
+        this.cognome = null;
+        this.frase = null;
+        this.data = null;
+        this.password = null;
     }
 
     /*Getter e Setter*/

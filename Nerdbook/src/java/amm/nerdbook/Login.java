@@ -38,8 +38,8 @@ public class Login extends HttpServlet{
             return;
         }
         
-        //Se esiste un attributo di sessione loggedIn e questo vale true
-        //(Utente già loggato)
+        //Se l'utente già loggato
+        //
         if (session.getAttribute("loggedIn") != null &&
             session.getAttribute("loggedIn").equals(true)){
 
@@ -48,7 +48,7 @@ public class Login extends HttpServlet{
        
         } 
         
-        //Se l'utente non è loggato...
+        //Se l'utente non è loggato 
         else{
             
             String username = request.getParameter("username");
@@ -59,17 +59,25 @@ public class Login extends HttpServlet{
                 //id dell'utente loggato
                 int loggedUserID = UtenteFactory.getInstance().getIdByUserAndPassword(username, password);
                 
-                //se l'utente è valido (e quindi l'id è diverso da -1)
+                
+                //se l'utente è valido -> loggedIn e indirizzo in bacheca
                 if(loggedUserID != -1){
                     
                     session.setAttribute("loggedIn", true);
                     session.setAttribute("loggedUserID", loggedUserID);
                     
+                    //Se il profilo dell'utente non è completo
+                    if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == false){
+                        request.getRequestDispatcher("profilo.jsp").forward(request, response);
+                        return;
+                    }
+                    
                     request.getRequestDispatcher("bacheca.jsp").forward(request, response);
                     return;
                 }
                 
-                else { //altrimenti se la coppia user/pass non è valida
+                //altrimenti se l'utente non e' valido
+                else { 
                     
                     //ritorno al form del login informandolo che i dati non sono validi
                     request.setAttribute("invalidData", true);
@@ -88,6 +96,7 @@ public class Login extends HttpServlet{
         */
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

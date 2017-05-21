@@ -452,6 +452,11 @@ div#formLogin form div{
     margin-bottom: 20px;
 }
 
+div#invalidDataWarning p{
+    font: 18px/22px "Lato", Arial, sans-serif;
+    font-weight: lighter;
+    color: #585B5D;
+}
 /*Fine Pagina Login*/
 
 
