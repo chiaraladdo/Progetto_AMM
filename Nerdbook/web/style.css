@@ -452,10 +452,12 @@ div#formLogin form div{
     margin-bottom: 20px;
 }
 
-div#invalidDataWarning p{
+div#invalidDataWarning{
+    text-align: center;
     font: 18px/22px "Lato", Arial, sans-serif;
     font-weight: lighter;
-    color: #585B5D;
+    color: #FA6138;
+    margin-top:20px;
 }
 /*Fine Pagina Login*/
 

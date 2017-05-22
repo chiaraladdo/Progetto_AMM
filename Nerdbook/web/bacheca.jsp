@@ -33,14 +33,14 @@
 
         <!--Contenuti della pagina-->
         <div id="divBody">
-            
+                    
             <!--Sidebar-->
             <jsp:include page="sidebar.jsp"/>
             
             <!--ProfiloAttivo-->
             <div id="profiloAttivo">
                <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
-               <p class="nomeUtente">"${utente.nome}" "${utente.cognome}":</p>
+               <p class="nomeUtente">${utente.nome} ${utente.cognome}:</p>
                <p class="content">"${utente.frase}"</p>
             </div>
             
@@ -86,7 +86,7 @@
             <!--lista dei post-->
             <div id="posts">
                 
-                <c:forEach var="post" items="${post}">
+                <c:forEach var="post" items="${posts}">
                     
                     <div class="post">
                         <img class="fotoProfilo" alt="fotoProfilo" src="${post.utente.urlFotoProfilo}">

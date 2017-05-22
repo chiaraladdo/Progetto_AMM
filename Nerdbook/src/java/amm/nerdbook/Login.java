@@ -5,7 +5,10 @@
  */
 package amm.nerdbook;
 
-import amm.nerdbook.model.UtenteFactory;
+
+import amm.nerdbook.model.Gruppo;
+import amm.nerdbook.model.GruppoFactory;
+import amm.nerdbook.model.Utente;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import amm.nerdbook.model.UtenteFactory;
+import java.util.List;
 
 
 /**
@@ -66,13 +71,27 @@ public class Login extends HttpServlet{
                     session.setAttribute("loggedIn", true);
                     session.setAttribute("loggedUserID", loggedUserID);
                     
-                    //Se il profilo dell'utente non è completo
+                    //inizializzo gli utenti della sidebar
+                    List<Utente> listaUtenti = UtenteFactory.getInstance().getListaUtenti();
+                    session.setAttribute("listaUtenti", listaUtenti);
+                    
+                    //inizializzo i gruppidella sidebar
+                    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getListaGruppo();
+                    session.setAttribute("listaGruppi", listaGruppi); 
+                    
+                    //inizializzo utente navbar
+                    Utente utenteAttivo = UtenteFactory.getInstance().getUtenteById(loggedUserID);
+                    session.setAttribute("utenteAttivo", utenteAttivo);
+                    
+                    
+                    //Se il profilo dell'utente non è completo vai in profilo
                     if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == false){
-                        request.getRequestDispatcher("profilo.jsp").forward(request, response);
+                        request.getRequestDispatcher("profilo.html").forward(request, response);
                         return;
                     }
                     
-                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                    //altrimenti vai in bacheca
+                    request.getRequestDispatcher("bacheca.html").forward(request, response);
                     return;
                 }
                 

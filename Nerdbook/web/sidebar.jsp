@@ -21,12 +21,12 @@
 
             <h2>Persone</h2>
 
-            <c:forEach var="persona" items="${utente}">
+            <c:forEach var="persona" items="${listaUtenti}">
                 <ul>
                     <li class = "persona">
                         <img alt="fotoProfilo" src="${persona.urlFotoProfilo}">
                         <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?utente=${persona.id}">
-                            "${persona.nome} ${persona.cognome}"</a>
+                            ${persona.nome} ${persona.cognome}</a>
                     </li>
                 </ul>
             </c:forEach>
@@ -38,12 +38,12 @@
 
             <h2>Gruppi</h2>
 
-            <c:forEach var="gruppo" items="${gruppo}">
+            <c:forEach var="gruppo" items="${listaGruppi}">
                 <ul>
                     <li class = "gruppo">
                         <img alt="fotoGruppo" src="${gruppo.urlFotoGruppo}">
                         <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?gruppo= ${gruppo.id}">
-                            "${gruppo.nome}"</a>
+                            ${gruppo.nome}</a>
                     </li>
                 </ul>
             </c:forEach>

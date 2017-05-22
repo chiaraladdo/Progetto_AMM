@@ -30,7 +30,7 @@ public class UtenteFactory{
         utente1.setNome("Harry");
         //utente1.setCognome("Potter");
         utente1.setPassword("miao");
-        utente1.setUrlFotoProfilo("../web/M2/img/HarryPotter1.jpg");
+        utente1.setUrlFotoProfilo("img/HarryPotter1.jpg");
         utente1.setFrase("Miaomiao");
         utente1.setData("31/07/1980");
         utente1.setEmail("harrypotter80@miao.it");
@@ -42,7 +42,7 @@ public class UtenteFactory{
         utente2.setNome("Lord");
         utente2.setCognome("Voldemort");
         utente2.setPassword("miao");
-        utente2.setUrlFotoProfilo("../web/M2/img/LordVoldemort1.jpg");
+        utente2.setUrlFotoProfilo("img/LordVoldemort1.jpg");
         utente2.setFrase("Miaomiao");
         utente2.setData("31/12/1926");
         utente2.setEmail("lordvoldy@miao.it");
@@ -53,7 +53,7 @@ public class UtenteFactory{
         utente3.setNome("Grattastinchi");
         utente3.setCognome("Miao");
         utente3.setPassword("miao");
-        utente3.setUrlFotoProfilo("../web/M2/img/Grattastinchi1.jpg");
+        utente3.setUrlFotoProfilo("img/Grattastinchi1.jpg");
         utente3.setFrase("Miaomiao");
         utente3.setData("01/01/2000");
         utente3.setEmail("gattino@miao.it");
@@ -95,6 +95,11 @@ public class UtenteFactory{
         }
         
         return false;
+    }
+    
+    
+    public ArrayList<Utente> getListaUtenti() {
+        return listaUtenti;
     }
     
 }
