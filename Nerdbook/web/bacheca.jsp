@@ -33,80 +33,91 @@
 
         <!--Contenuti della pagina-->
         <div id="divBody">
-                    
-            <!--Sidebar-->
-            <jsp:include page="sidebar.jsp"/>
             
-            <!--ProfiloAttivo-->
-            <div id="profiloAttivo">
-               <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
-               <p class="nomeUtente">${utente.nome} ${utente.cognome}:</p>
-               <p class="content">"${utente.frase}"</p>
-            </div>
-            
-            <!--Nuovo Post-->
-            <div id="nuovoPost">
-                <form action="servlet.java" method="post">
-                      
-                    <p>Crea un post</p>
-                    <textarea name="textPost" id="textPost"></textarea>
-                    
-                    <div id="tipoPost">
-                        
-                        <div>
-                            <label for="noneType">None</label>
-                            <input type="radio" name="tipoPost" value="noneType" id="noneType">
-                        </div>
-                        
-                        <div>
-                            <label for="urlType">Url</label>
-                            <input type="radio" name="tipoPost" value="urlType" id="urlType">
-                        </div>
-                        
-                        <div>
-                            <label for="imgType">Foto</label>
-                            <input type="radio" name="tipoPost" value="imgType" id="imgType">
-                        </div>
-                        
-                        
-                    </div>
-                    
-                    <div id="contenutoAllegato"> 
-                        <div>
-                            <label for="urlPost">Url</label>
-                            <input type="url" name="urlPost" id="urlPost">
-                        </div>
-                    </div>
-                    
-                    <button type="submit">Crea Post</button>
-                    
-                </form>
-            </div>
-            
-            <!--lista dei post-->
-            <div id="posts">
+            <c:if test="${invalidData == true}">
                 
-                <c:forEach var="post" items="${posts}">
-                    
-                    <div class="post">
-                        <img class="fotoProfilo" alt="fotoProfilo" src="${post.utente.urlFotoProfilo}">
-                        <p class="nomeUtente">"${post.utente.nome} ${post.utente.cognome}"</p>
-
-                        <div class="content">
-                            <p>${post.contenuto}</p>
-                            <c:if test="${post.tipoPost == 'IMAGE'}">
-                                <img alt="Foto Post" src="${post.contenutoTipo}">
-                            </c:if>
-
-                            <c:if test="${post.tipoPost == 'URL'}">
-                                <img alt="Foto Post" src="${post.contenutoTipo}">
-                            </c:if>
-                        </div>
-                    </div>
-                        
-                </c:forEach>
+                <div id="invalidDataWarning">
+                    <p>Accesso negato</p>
+                </div>
                 
-            </div>
+            </c:if>
+            
+            <c:if test="${loggedIn}">
+                
+                <!--Sidebar-->
+                <jsp:include page="sidebar.jsp"/>
+
+                <!--ProfiloAttivo-->
+                <div id="profiloAttivo">
+                   <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
+                   <p class="nomeUtente">${utente.nome} ${utente.cognome}:</p>
+                   <p class="content">"${utente.frase}"</p>
+                </div>
+
+                <!--Nuovo Post-->
+                <div id="nuovoPost">
+                    <form action="servlet.java" method="post">
+
+                        <h3>Crea un post</h3>
+                        <textarea name="textPost" id="textPost"></textarea>
+
+                        <div id="tipoPost">
+
+                            <div>
+                                <label for="noneType">None</label>
+                                <input type="radio" name="tipoPost" value="noneType" id="noneType">
+                            </div>
+
+                            <div>
+                                <label for="urlType">Url</label>
+                                <input type="radio" name="tipoPost" value="urlType" id="urlType">
+                            </div>
+
+                            <div>
+                                <label for="imgType">Foto</label>
+                                <input type="radio" name="tipoPost" value="imgType" id="imgType">
+                            </div>
+
+
+                        </div>
+
+                        <div id="contenutoAllegato"> 
+                            <div>
+                                <label for="urlPost">Url</label>
+                                <input type="url" name="urlPost" id="urlPost">
+                            </div>
+                        </div>
+
+                        <button type="submit">Crea Post</button>
+
+                    </form>
+                </div>
+
+                <!--lista dei post-->
+                <div id="posts">
+
+                    <c:forEach var="post" items="${posts}">
+
+                        <div class="post">
+                            <img class="fotoProfilo" alt="fotoProfilo" src="${post.utente.urlFotoProfilo}">
+                            <p class="nomeUtente">${post.utente.nome} ${post.utente.cognome}</p>
+
+                            <div class="content">
+                                <p>${post.contenuto}</p>
+                                <c:if test="${post.tipoPost == 'IMAGE'}">
+                                    <img alt="Foto Post" src="${post.contenutoTipo}">
+                                </c:if>
+
+                                <c:if test="${post.tipoPost == 'URL'}">
+                                    <a alt="Url Post" href="${post.contenutoTipo}">${post.contenutoTipo}</a>
+                                </c:if>
+                            </div>
+                        </div>
+
+                    </c:forEach>
+
+                </div>
+            </c:if> 
             
         </div>
         

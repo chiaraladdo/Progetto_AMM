@@ -7,48 +7,46 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div id="divBody">
 
-    <!--SideBar-->
-    <div id = "sidebar">
+<!--SideBar-->
+<div id = "sidebar">
 
-        <form>
-            <input type="search" name="searchBar" id="searchBar" placeholder="Cerca..."/>
-        </form>
+    <form>
+        <input type="search" name="searchBar" id="searchBar" placeholder="Cerca..."/>
+    </form>
 
-        <!--Lista Utenti-->
-        <div id="Persone">
+    <!--Lista Utenti-->
+    <div id="Persone">
 
-            <h2>Persone</h2>
+        <h2>Persone</h2>
 
-            <c:forEach var="persona" items="${listaUtenti}">
-                <ul>
-                    <li class = "persona">
-                        <img alt="fotoProfilo" src="${persona.urlFotoProfilo}">
-                        <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?utente=${persona.id}">
-                            ${persona.nome} ${persona.cognome}</a>
-                    </li>
-                </ul>
-            </c:forEach>
-
-        </div>
-
-        <!--Lista Gruppi-->
-        <div id="Gruppi">
-
-            <h2>Gruppi</h2>
-
-            <c:forEach var="gruppo" items="${listaGruppi}">
-                <ul>
-                    <li class = "gruppo">
-                        <img alt="fotoGruppo" src="${gruppo.urlFotoGruppo}">
-                        <a href = "file:///Users/Chiara/NetBeansProjects/Progetto_AMM/Nerdbook/web/M2/bacheca.html?gruppo= ${gruppo.id}">
-                            ${gruppo.nome}</a>
-                    </li>
-                </ul>
-            </c:forEach>
-
-        </div>
+        <c:forEach var="persona" items="${listaUtenti}">
+            <ul>
+                <li class = "persona">
+                    <img alt="fotoProfilo" src="${persona.urlFotoProfilo}">
+                    <a href = "bacheca.html?utente=${persona.id}">
+                        ${persona.nome} ${persona.cognome}</a>
+                </li>
+            </ul>
+        </c:forEach>
 
     </div>
- </div>
+
+    <!--Lista Gruppi-->
+    <div id="Gruppi">
+
+        <h2>Gruppi</h2>
+
+        <c:forEach var="gruppo" items="${listaGruppi}">
+            <ul>
+                <li class = "gruppo">
+                    <img alt="fotoGruppo" src="${gruppo.urlFotoGruppo}">
+                    <a href = "bacheca.html?gruppo= ${gruppo.id}">
+                        ${gruppo.nome}</a>
+                </li>
+            </ul>
+        </c:forEach>
+
+    </div>
+
+</div>

@@ -88,7 +88,10 @@ public class Bacheca extends HttpServlet {
         
         //se non c'è un utente loggato va in login
         else{
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            
+            //messaggio di errore
+            request.setAttribute("invalidData", true);
+            request.getRequestDispatcher("bacheca.jsp").forward(request, response);
         }
     }
 

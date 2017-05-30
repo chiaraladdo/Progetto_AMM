@@ -48,7 +48,7 @@ public class Login extends HttpServlet{
         if (session.getAttribute("loggedIn") != null &&
             session.getAttribute("loggedIn").equals(true)){
 
-            request.getRequestDispatcher("descrizione.jsp").forward(request, response);
+            request.getRequestDispatcher("bacheca.html").forward(request, response);
             return;
        
         } 
@@ -75,7 +75,7 @@ public class Login extends HttpServlet{
                     List<Utente> listaUtenti = UtenteFactory.getInstance().getListaUtenti();
                     session.setAttribute("listaUtenti", listaUtenti);
                     
-                    //inizializzo i gruppidella sidebar
+                    //inizializzo i gruppi della sidebar
                     List<Gruppo> listaGruppi = GruppoFactory.getInstance().getListaGruppo();
                     session.setAttribute("listaGruppi", listaGruppi); 
                     
@@ -86,7 +86,7 @@ public class Login extends HttpServlet{
                     
                     //Se il profilo dell'utente non è completo vai in profilo
                     if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == false){
-                        request.getRequestDispatcher("profilo.html").forward(request, response);
+                        request.getRequestDispatcher("profilo.jsp").forward(request, response);
                         return;
                     }
                     

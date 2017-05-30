@@ -89,7 +89,8 @@ public class UtenteFactory{
         if(getUtenteById(id).getNome()!= null 
            && getUtenteById(id).getCognome()!= null 
            && getUtenteById(id).getUrlFotoProfilo()!= null 
-           && getUtenteById(id).getFrase()!= null){
+           && getUtenteById(id).getFrase()!= null
+           && getUtenteById(id).getPassword()!= null){
             
             return true;
         }

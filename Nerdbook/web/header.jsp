@@ -15,9 +15,10 @@
     
     <nav>
         <ul>
-            <li<c:if test="${page == 'descrizione'}"> class="active"</c:if>><a href="descrizione.jsp">Descrizione</a></li>
-            <li<c:if test="${page == 'login'}"> class="active"></c:if>><a href="login.jsp">Login</a></li>
-            
+            <c:if test="${loggedIn == null || loggedIn == false}">
+                <li<c:if test="${page == 'descrizione'}"> class="active"</c:if>><a href="descrizione.jsp">Descrizione</a></li>
+                <li<c:if test="${page == 'login'}"> class="active"></c:if>><a href="login.html">Login</a></li>
+            </c:if>
             
             <c:if test="${loggedIn}">
                 

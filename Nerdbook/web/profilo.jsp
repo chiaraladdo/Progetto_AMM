@@ -31,59 +31,75 @@
         
         <div id = "divBody">
             
-             <!--Sidebar-->
-            <jsp:include page="sidebar.jsp"/>
-                
-            <div id="formProfilo" >
-                
-                <div id="dimFotoProfilo" class="dimFoto">
-                   <img alt="fotoProfiloAttivo" src="${utenteAttivo.urlFotoProfilo}"> 
+            
+            <c:if test="${invalidData == true}">
+                <div id="invalidDataWarning">
+                    <p>Accesso negato</p>
                 </div>
-                
-                
-                <form class="Profilo" action="#profilo.html" method="post">
-                    
-                    <div>
-                        <label for="nomeUtente">Nome</label>
-                        <input type="text" name="nomeUtente" id="nomeUtente" value="${utenteAttivo.nome}"/>
-                    </div>
-                    
-                    <div>
-                        <label for="cognomeUtente">Cognome</label>
-                        <input type="text" name="cognomeUtente" id="cognomeUtente" value="${utenteAttivo.cognome}"/>
-                    </div>
-                    
-                    <div>
-                        <label for="urlProfilo">URL Immagine del Profilo</label>
-                        <input type="url" name="urlProfilo" id="urlProfilo" value="${utenteAttivo.urlFotoProfilo}">    
-                    </div>
-                   
-                    <div>
-                        <label for="presentazione">Frase Presentazione</label>
-                        <textarea rows="4" cols="20" name="presentazione" id="presentazione"
-                                  value="${utenteAttivo.frase}" ></textarea>
-                    </div>
-                    
-                    <div>
-                        <label for="dataNascita">Data di nascita</label>
-                        <input type="date" name="dataNascita" id="dataNascita" value="${utenteAttivo.data}"/>
-                    </div>
-                    
-                    <div>
-                        <label for="pswd">Password</label>
-                        <input type="password" name="pswd" id="pswd" value="${utenteAttivo.password}"/>
-                    </div>
-                    
-                    <div>
-                        <label for="confermaPswd">Conferma Password</label>
-                        <input type="password" name="confermaPswd" id="confermaPswd"  value="${utenteAttivo.password}"/>
-                    </div>
-                    
-                    <button type="submit">Aggiorna</button> 
+            </c:if>
+            
+            <c:if test="${completeData == true}">
+                <div id="completeData">
+                    <h2>Abbiamo inserito i dati (invece non è vero, lol)</h2>
+                </div>
+            </c:if>
+            
+            <!--Se c'è un utente autenticato-->
+            <c:if test="${loggedIn}">
+                <!--Sidebar-->
+                <jsp:include page="sidebar.jsp"/>
 
-                </form>
-  
-            </div>
+                <div id="formProfilo" >
+
+                    <div id="dimFotoProfilo" class="dimFoto">
+                       <img alt="fotoProfiloAttivo" src="${utenteAttivo.urlFotoProfilo}"> 
+                    </div>
+
+
+                    <form class="Profilo" action="profilo.jsp" method="post">
+
+                        <div>
+                            <label for="nomeUtente">Nome</label>
+                            <input type="text" name="nomeUtente" id="nomeUtente" value="${utenteAttivo.nome}"/>
+                        </div>
+
+                        <div>
+                            <label for="cognomeUtente">Cognome</label>
+                            <input type="text" name="cognomeUtente" id="cognomeUtente" value="${utenteAttivo.cognome}"/>
+                        </div>
+
+                        <div>
+                            <label for="urlProfilo">URL Immagine del Profilo</label>
+                            <input type="url" name="urlProfilo" id="urlProfilo" value="${utenteAttivo.urlFotoProfilo}">    
+                        </div>
+
+                        <div>
+                            <label for="presentazione">Frase Presentazione</label>
+                            <textarea rows="4" cols="20" name="presentazione" id="presentazione"
+                                      value="${utenteAttivo.frase}" ></textarea>
+                        </div>
+
+                        <div>
+                            <label for="dataNascita">Data di nascita</label>
+                            <input type="date" name="dataNascita" id="dataNascita" value="${utenteAttivo.data}"/>
+                        </div>
+
+                        <div>
+                            <label for="pswd">Password</label>
+                            <input type="password" name="pswd" id="pswd" value="${utenteAttivo.password}"/>
+                        </div>
+
+                        <div>
+                            <label for="confermaPswd">Conferma Password</label>
+                            <input type="password" name="confermaPswd" id="confermaPswd"  value="${utenteAttivo.password}"/>
+                        </div>
+
+                        <button type="submit">Aggiorna</button> 
+
+                    </form>                 
+                </div>
+            </c:if>
+        
         </div>
         
     </body>

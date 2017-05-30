@@ -37,8 +37,7 @@ public class Profilo extends HttpServlet {
         
          
         HttpSession session = request.getSession(false);
-        
-        
+
         //se la sessione esiste ed esiste anche l'attributo loggedIn impostato a true
         if(session != null && 
            session.getAttribute("loggedIn") != null &&
@@ -49,8 +48,9 @@ public class Profilo extends HttpServlet {
             String user = request.getParameter("user");
             
             int userID;
+           
 
-            if(user!= null){
+            if(user != null){
                 userID = Integer.parseInt(user);
             
             } 
@@ -59,7 +59,27 @@ public class Profilo extends HttpServlet {
                 Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
                 userID = loggedUserID;
             }
+            
+            
+            
         }
+        
+        else{
+            
+            //messaggio di errore
+            request.setAttribute("invalidData", true);
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+        }
+        
+        
+        Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+        
+        //Se il profilo dell'utente viene completato stampa un messaggio
+        if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == true){
+            request.setAttribute("completeData", true);
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+        }
+
         
     }
     
