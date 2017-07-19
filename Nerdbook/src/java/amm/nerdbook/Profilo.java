@@ -44,7 +44,7 @@ public class Profilo extends HttpServlet {
            session.getAttribute("loggedIn").equals(true)){
             
             //controllo se è impostato il parametro get "user" che mi consente
-            //di visualizzare una bacheca di uno specifico utente
+            //di visualizzare un profilo di uno specifico utente
             String user = request.getParameter("user");
             
             int userID;
@@ -60,6 +60,14 @@ public class Profilo extends HttpServlet {
                 userID = loggedUserID;
             }
             
+            Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+            
+            //Se il profilo dell'utente viene completato stampa un messaggio
+            if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == true){
+                request.setAttribute("completeData", true);
+                request.getRequestDispatcher("profilo.jsp").forward(request, response);
+            }
+            
             
             
         }
@@ -72,13 +80,6 @@ public class Profilo extends HttpServlet {
         }
         
         
-        Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
-        
-        //Se il profilo dell'utente viene completato stampa un messaggio
-        if(UtenteFactory.getInstance().profiloCompleto(loggedUserID) == true){
-            request.setAttribute("completeData", true);
-            request.getRequestDispatcher("profilo.jsp").forward(request, response);
-        }
 
         
     }

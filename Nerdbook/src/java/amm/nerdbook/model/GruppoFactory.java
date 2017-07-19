@@ -39,14 +39,14 @@ public class GruppoFactory {
         listaGruppo.add(gruppo2);
         
         Gruppo gruppo3 = new Gruppo();
-        gruppo3.setId(1);
+        gruppo3.setId(2);
         gruppo3.setNome("Corvonero");
         gruppo3.setListaUtenti(null);
         gruppo3.setUrlFotoGruppo("img/corvonero.GIF");
         listaGruppo.add(gruppo3);
         
         Gruppo gruppo4 = new Gruppo();
-        gruppo4.setId(1);
+        gruppo4.setId(3);
         gruppo4.setNome("Serpeverde");
         gruppo4.setListaUtenti(null);
         gruppo4.setUrlFotoGruppo("img/serpeverde.jpg");

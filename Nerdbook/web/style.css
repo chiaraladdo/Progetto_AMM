@@ -553,9 +553,8 @@ div#dimFotoProfilo img{
     float:right;
 }
 
-.completeData{
-    display: inline-block;
-    float:right;
+#completeData h1{
+    text-align: center;
 }
 /*Fine Pagina Profilo*/
 

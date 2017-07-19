@@ -40,7 +40,7 @@
             
             <c:if test="${completeData == true}">
                 <div id="completeData">
-                    <h2>Abbiamo inserito i dati (invece non è vero, lol)</h2>
+                    <h1>Abbiamo inserito i dati (invece non è vero, lol)</h1>
                 </div>
             </c:if>
             
@@ -56,7 +56,7 @@
                     </div>
 
 
-                    <form class="Profilo" action="profilo.jsp" method="post">
+                    <form class="Profilo" action="profilo.html" method="post">
 
                         <div>
                             <label for="nomeUtente">Nome</label>

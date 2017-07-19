@@ -5,6 +5,8 @@
  */
 package amm.nerdbook;
 
+import amm.nerdbook.model.Gruppo;
+import amm.nerdbook.model.GruppoFactory;
 import amm.nerdbook.model.Post;
 import amm.nerdbook.model.PostFactory;
 import java.io.IOException;
@@ -48,45 +50,81 @@ public class Bacheca extends HttpServlet {
            session.getAttribute("loggedIn") != null &&
            session.getAttribute("loggedIn").equals(true)){
             
-            //controllo se è impostato il parametro get "user" che mi consente
-            //di visualizzare una bacheca di uno specifico utente
-            String user = request.getParameter("user");
-            
-            int userID;
+            if(request.getParameter("gruppo") == null){
+                //visualizzare una bacheca di uno specifico utente
+                String user = request.getParameter("utente");
 
-            if(user!= null){
-                userID = Integer.parseInt(user);
-            
-            } 
+                //acquisisco utente
+                int userID;
+
+                if(user!= null){
+                    userID = Integer.parseInt(user);
+
+                } 
+
+                else{
+                    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+                    userID = loggedUserID;
+                }
+
+                //Acquisisco l'utente loggato
+                Utente utente = UtenteFactory.getInstance().getUtenteById(userID);
+
+                //se esiste davvero
+                if(utente != null){
+
+                    //inizializzo la variabile utente per la jsp
+                    request.setAttribute("utente", utente);
+
+                    //inizializzo i post dell'utente nella sua bacheca
+                    List<Post> post = PostFactory.getInstance().getPostList(utente);
+                    request.setAttribute("posts", post);
+
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                }
+
+                //altrimenti errore
+                else{
+                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
+            }
             
             else{
-                Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
-                userID = loggedUserID;
-            }
 
-            //Acquisisco l'utente loggato
-            Utente utente = UtenteFactory.getInstance().getUtenteById(userID);
-            
-            //se esiste davvero
-            if(utente != null){
-                
-                //inizializzo la variabile utente per la jsp
-                request.setAttribute("utente", utente);
-                
-                //inizializzo i post dell'utente nella sua bacheca
-                List<Post> post = PostFactory.getInstance().getPostList(utente);
-                request.setAttribute("posts", post);
+                String group = request.getParameter("gruppo");
 
-                request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                //acquisisco gruppo
+                int groupID = 0;
+
+                if(group!= null){
+                    groupID = Integer.parseInt(group);
+
+                }
+
+                Gruppo gruppo = GruppoFactory.getInstance().getGruppoById(groupID);
+
+                //se esiste davvero
+                if(gruppo != null){
+
+                    //inizializzo la variabile gruppo per la jsp
+                    request.setAttribute("gruppo", gruppo);
+
+                    //inizializzo i post dell'utente nella sua bacheca
+                    List<Post> post = PostFactory.getInstance().getPostList(gruppo);
+                    request.setAttribute("posts", post);
+
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                }
+
+                //altrimenti errore
+                else{
+                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
             }
             
-            //altrimenti errore
-            else{
-                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            }
         }
         
-        //se non c'è un utente loggato va in login
+        //se non c'è un utente messaggio di errore
         else{
             
             //messaggio di errore

@@ -41,7 +41,7 @@
             <ul>
                 <li class = "gruppo">
                     <img alt="fotoGruppo" src="${gruppo.urlFotoGruppo}">
-                    <a href = "bacheca.html?gruppo= ${gruppo.id}">
+                    <a href = "bacheca.html?gruppo=${gruppo.id}">
                         ${gruppo.nome}</a>
                 </li>
             </ul>

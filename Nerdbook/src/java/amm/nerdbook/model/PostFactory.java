@@ -46,6 +46,13 @@ public class PostFactory {
         post3.setUtente(utenteFactory.getUtenteById(2));
         post3.setTipoPost(Post.Tipo.URL);
         post3.setContenutoTipo("http://it.harrypotter.wikia.com/wiki/Grattastinchi");
+        
+        Post post4 = new Post();
+        post4.setContenuto("Viva grifondoro");
+        post4.setId(3);
+        post4.setGruppo(gruppoFactory.getGruppoById(0));
+        post4.setTipoPost(Post.Tipo.URL);
+        post4.setContenutoTipo("http://it.harrypotter.wikia.com/wiki/Grattastinchi");
 
         listaPost.add(post1);
         listaPost.add(post2);
@@ -64,22 +71,28 @@ public class PostFactory {
     public List getPostList(Utente utente) {
 
         List<Post> listaPost = new ArrayList<Post>();
-
-        for (Post post : this.listaPost) {
-            if (post.getUtente().equals(utente)) {
-                listaPost.add(post);
+        
+        if(this.listaPost != null){
+        
+            for (Post post : this.listaPost) {
+                if (post.getUtente().equals(utente)) {
+                    listaPost.add(post);
+                }
             }
-        }
+        }    
         return listaPost;
+        
     }
 
         
     public List getPostList(Gruppo gruppo){
         List<Post> listaPost = new ArrayList<Post>();
-
-        for (Post post : this.listaPost) {
-            if (post.getGruppo().equals(gruppo)) {
-                   listaPost.add(post);
+        
+        if(this.listaPost != null){
+            for (Post post : this.listaPost) {
+                if (post.getGruppo().equals(gruppo)) {
+                       listaPost.add(post);
+                }
             }
         }
         return listaPost;

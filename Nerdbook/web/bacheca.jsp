@@ -35,24 +35,25 @@
         <div id="divBody">
             
             <c:if test="${invalidData == true}">
-                
                 <div id="invalidDataWarning">
                     <p>Accesso negato</p>
                 </div>
-                
             </c:if>
+
             
             <c:if test="${loggedIn}">
                 
                 <!--Sidebar-->
                 <jsp:include page="sidebar.jsp"/>
-
-                <!--ProfiloAttivo-->
-                <div id="profiloAttivo">
-                   <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
-                   <p class="nomeUtente">${utente.nome} ${utente.cognome}:</p>
-                   <p class="content">"${utente.frase}"</p>
-                </div>
+                
+                 <c:if test="${utente != null}">
+                    <!--ProfiloBacheca-->
+                    <div id="profiloAttivo">
+                       <img class="fotoProfilo" alt="fotoProfiloAttivo" src="${utente.urlFotoProfilo}">
+                       <p class="nomeUtente">${utente.nome} ${utente.cognome}:</p>
+                       <p class="content">"${utente.frase}"</p>
+                    </div>
+                 </c:if>
 
                 <!--Nuovo Post-->
                 <div id="nuovoPost">
